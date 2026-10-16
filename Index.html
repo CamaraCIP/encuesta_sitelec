@@ -1027,6 +1027,7 @@ function renderSummary() {
 /* ---------- Construcción del relato ---------- */
 const built = [];
 let observer = null;
+let syncSteps = () => {};
 
 function buildStory() {
   const story = $('story');
@@ -1081,16 +1082,31 @@ function buildStory() {
     }
     st.dataset.revealed = 'true';
   }
+  const mobileQ = window.matchMedia('(max-width: 860px)');
+  // Escritorio: el paso activo es el que cruza el 52 % de la altura de la ventana. Se calcula con la
+  // posición de cada paso porque, dentro de un iframe de otro dominio (GitHub dentro del sitio
+  // institucional), IntersectionObserver ignora rootMargin y activaría el paso equivocado.
+  let ticking = false;
+  syncSteps = () => {
+    ticking = false;
+    if (mobileQ.matches || !M) return;
+    const y = window.innerHeight * 0.52;
+    built.forEach(c => {
+      if (c.sec.hidden) return;
+      const st = c.stepEls.find(x => { if (x.hidden) return false; const r = x.getBoundingClientRect(); return r.top <= y && r.bottom > y; });
+      if (st && c.cur !== +st.dataset.i) activateStep(st);
+    });
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(syncSteps); } }, { passive: true });
+  window.addEventListener('resize', () => syncSteps());
+  // Móvil: cada escena tiene su propio gráfico y se revela al aparecer en pantalla.
   if ('IntersectionObserver' in window) {
     observer = new IntersectionObserver(entries => {
-      entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-        .forEach(e => activateStep(e.target));
-    }, window.matchMedia('(max-width: 860px)').matches
-      ? { threshold: 0.14, rootMargin: '0px 0px -12% 0px' }
-      : { threshold: 0, rootMargin: '-50% 0px -45% 0px' });
+      if (!mobileQ.matches) return;
+      entries.filter(e => e.isIntersecting).forEach(e => activateStep(e.target));
+    }, { threshold: 0.14 });
     built.forEach(c => c.stepEls.forEach(st => observer.observe(st)));
   } else {
-    // Sin IntersectionObserver, el contenido no queda bloqueado ni invisible.
     built.forEach(c => c.stepEls.forEach(st => activateStep(st)));
   }
 
@@ -1123,6 +1139,7 @@ function refresh() {
   renderQuotes();
   renderSectors();
   renderAbout();
+  syncSteps();
 }
 
 /* ---------- Respuestas abiertas: temas por palabras clave (sin IA) ---------- */
