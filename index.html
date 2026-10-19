@@ -504,6 +504,25 @@ window.CIP_ASSETS = {
     .step { min-height: 0; }
     .step-card { opacity: 1; }
   }
+
+  /* Alternancia de ilustraciones dentro de cada capítulo. */
+  .stage-gfx[hidden] { display: none !important; }
+  .stage-gfx { width: 100%; animation: stage-entry .3s ease-out both; }
+  @keyframes stage-entry { from { opacity: .25; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  .chapter { scroll-margin-top: 2vh; }
+  @media (max-width: 860px) {
+    /* Zona visual fija, siempre separada de las tarjetas de texto. */
+    .graphic { position: sticky; top: 0; height: 58vh; height: 58svh; }
+    .steps { padding-bottom: 34vh; padding-bottom: 34svh; }
+    .step, .step:first-child { min-height: 42vh; min-height: 42svh; }
+    .stage-gfx, .gfx { min-width: 0; }
+  }
+  @media (max-width: 420px) and (max-height: 700px) {
+    .graphic { height: 54vh; height: 54svh; }
+    .step, .step:first-child { min-height: 46vh; min-height: 46svh; }
+    .gfx { padding: 10px 12px; }
+    .gfx-title { font-size: .82rem; margin-bottom: 6px; }
+  }
 </style>
 </head>
 <body>
@@ -928,7 +947,7 @@ function lastResponse() {
 /* ---------- Capítulos del relato ---------- */
 /* Arco: duración → frecuencia → techo del respaldo → costos (y su heterogeneidad) → producción →
    afectación → incertidumbre → agenda → cierre. Rótulo (k), titular (h) y texto (b) se recalculan con cada respuesta. */
-const CHAPTERS = [
+const SOURCE_CHAPTERS = [
   {
     tag: 'Duración',
     title: m => (m.long >= 0.5 ? 'La producción no puede ponerse en pausa indefinidamente' : 'La duración de los cortes condiciona la operación'),
@@ -1040,10 +1059,8 @@ const CHAPTERS = [
         headOnly: true,
         h: m => {
           if (!Number.isFinite(m.cls.A)) return '';
-          const n = Math.round(m.cls.A * 10);
-          if (n === 0) return 'Prácticamente ninguna empresa logra mantener su operación frente a los cortes.';
-          if (n === 1) return 'Apenas 1 de cada 10 empresas logra mantener su operación frente a los cortes.';
-          return (n <= 4 ? 'Solo ' : '') + n + ' de cada 10 empresas logran mantener su operación frente a los cortes.';
+          return (m.cls.A < 0.5 ? 'Solo el ' : 'El ') + pct(m.cls.A) +
+            ' logra sostener toda su operación durante la interrupción promedio declarada.';
         } },
       { k: 'Por qué no alcanza',
         h: m => (m.lim.length ? cap(lower(m.lim[0].label)) + '.' : ''),
@@ -1329,13 +1346,77 @@ const CHAPTERS = [
   },
 ];
 
+/* Cuatro capítulos editoriales que preservan las visualizaciones originales.
+   Las ilustraciones cambian con el scroll; no se duplican las métricas. */
+const CHAPTER_GROUPS = [
+  {
+    tag: 'Racionamiento', sources: [0, 1],
+    title: m => 'El racionamiento altera el ritmo de la producción',
+    intro: m => 'Duración y recurrencia de las interrupciones: dos dimensiones de una misma restricción productiva.',
+    note: m => 'Referencia: últimos 30 días. La frecuencia mide días con al menos un corte, no días completos sin energía.'
+  },
+  {
+    tag: 'Capacidad de generación', sources: [2],
+    title: m => 'La generación propia sostiene la operación, pero tiene límites',
+    intro: m => 'Cobertura, autonomía, brecha frente a la duración de los cortes y restricciones para ampliar el respaldo.',
+    note: m => SOURCE_CHAPTERS[2].note(m)
+  },
+  {
+    tag: 'Impactos', sources: [3, 4, 5, 6],
+    title: m => 'El impacto va de los costos a la continuidad productiva',
+    intro: m => 'Combustible, costos laborales, producción, severidad e incertidumbre operativa: consecuencias relacionadas, no equivalentes.',
+    note: m => 'Afectaciones declaradas y selección múltiple, sin cuantificación monetaria ni atribución causal. Los indicadores de cambios de horario usan solamente las respuestas que reportaron cambios.'
+  },
+  {
+    tag: 'Posición', sources: [7],
+    title: m => '¿Qué pide la industria?',
+    intro: m => 'Prioridades para reducir los impactos de las restricciones y hacer viable la contribución del sector productivo.',
+    note: m => SOURCE_CHAPTERS[7].note(m)
+  }
+];
+const CHAPTERS = CHAPTER_GROUPS.map(group => {
+  const steps = group.sources.flatMap(source =>
+    SOURCE_CHAPTERS[source].steps.map((step, local) => ({
+      ...step, _source: source, _local: local,
+      k: SOURCE_CHAPTERS[source].tag + ' · ' + step.k
+    }))
+  );
+  return {
+    ...group, steps,
+    init(g) {
+      g._stages = new Map();
+      group.sources.forEach(source => {
+        const stage = el('div', 'stage-gfx');
+        stage.hidden = true;
+        g.append(stage);
+        SOURCE_CHAPTERS[source].init(stage);
+        g._stages.set(source, stage);
+      });
+    },
+    draw(g, m, stepIndex) {
+      const step = steps[Math.max(0, Math.min(steps.length - 1, stepIndex))];
+      if (!step) return;
+      g._stages.forEach((stage, source) => {
+        stage.hidden = source !== step._source;
+      });
+      SOURCE_CHAPTERS[step._source].draw(
+        g._stages.get(step._source), m,
+        stepIndex < 0 ? -1 : step._local
+      );
+    }
+  };
+});
+function chapterHasData(i) {
+  return CHAPTER_GROUPS[i].sources.some(source => Boolean(M.n[BASES[source]]));
+}
+
 /* ---------- Resumen ejecutivo ---------- */
 function renderSummary() {
   const sec = $('summary');
   sec.replaceChildren();
   const inner = el('div', 'summary-inner');
   const nav = el('nav', 'toc'); nav.setAttribute('aria-label', 'Ir a los resultados');
-  CHAPTERS.forEach((ch, i) => { if (!M.n[BASES[i]]) return; const a = el('a', null, String(i + 1).padStart(2, '0') + ' ' + ch.tag); a.href = '#capitulo-' + i; nav.append(a); });
+  CHAPTERS.forEach((ch, i) => { if (!chapterHasData(i)) return; const a = el('a', null, String(i + 1).padStart(2, '0') + ' ' + ch.tag); a.href = '#capitulo-' + i; nav.append(a); });
   inner.append(nav);
   sec.append(inner);
 }
@@ -1374,7 +1455,7 @@ function buildStory() {
     built.push({ def, sec, g, stepEls, num, h2, intro, note, cur: -1 });
   });
 
-  const extra = [['sector-sec', 'plain'], ['closing-sec', 'closing']].map(([id, cls]) => { const s = el('section', cls); s.id = id; return s; });
+  const extra = [['closing-sec', 'closing']].map(([id, cls]) => { const s = el('section', cls); s.id = id; return s; });
   const about = el('footer', 'about'); about.id = 'about';
   story.append(...extra, about);
 
@@ -1405,7 +1486,7 @@ function buildStory() {
 function refresh() {
   if (!built.length) buildStory();
   built.forEach((c, ci) => {
-    c.sec.hidden = !M.n[BASES[ci]];
+    c.sec.hidden = !chapterHasData(ci);
     if (c.sec.hidden) return;
     c.num.textContent = String(ci + 1).padStart(2, '0') + ' / ' + String(CHAPTERS.length).padStart(2, '0') + ' · ' + c.def.tag;
     c.h2.textContent = c.def.title(M);
@@ -1420,7 +1501,7 @@ function refresh() {
         if (body || (sd.headOnly && head)) html = '<p class="k">' + esc(sd.k) + '</p>' + (head ? '<p class="h">' + esc(head) + '</p>' : '') + (body ? '<p class="b">' + body + '</p>' : '');
       } catch (e) { html = ''; }
       st.querySelector('.step-card').innerHTML = html;
-      st.hidden = !html;
+      st.hidden = !html || !M.n[BASES[sd._source]];
     });
     c.def.draw(c.g, M, c.cur);
   });
@@ -1436,7 +1517,6 @@ function refresh() {
   });
   $('foot-text').textContent = (CFG.institution || 'CIP') + ' · Resultados agregados y anónimos' + (lastResponse() ? ' · Datos al ' + lastResponse().toLocaleDateString(LOCALE, { dateStyle: 'long' }) : '');
   renderSummary();
-  renderSectors();
   renderClosing();
   renderAbout();
   syncSteps();
@@ -1583,44 +1663,12 @@ function renderPolicy() {
   sec.append(grid, el('p', 'gfx-note', 'Propuesta derivada del diagnóstico; los esquemas son conceptuales y su factibilidad requiere validación técnica y regulatoria.'));
 }
 
-function renderSectors() {
-  const sec = $('sector-sec');
-  sec.replaceChildren();
-  if (idx.sector < 0 || idx.afectacion < 0) return;
-  const groups = new Map();
-  data.rows.forEach(r => {
-    if (!notEmpty(r[idx.sector]) || !notEmpty(r[idx.afectacion])) return;
-    const s = clean(r[idx.sector]);
-    if (!groups.has(s)) groups.set(s, []);
-    groups.get(s).push(r[idx.afectacion]);
-  });
-  const shown = [], rest = [];
-  groups.forEach((v, s) => (v.length >= MIN_GROUP ? shown.push([s, v]) : rest.push(...v)));
-  if (!shown.length) return;
-  if (rest.length >= MIN_GROUP) shown.push(['Otros sectores', rest]);
-  const rows = shown.map(([s, v]) => { const items = ordinal(v, ORD.afectacion, severityLabel); return { s, items, hi: share(items, ['Alto', 'Crítico']) }; })
-    .sort((a, b) => (a.s === 'Otros sectores') - (b.s === 'Otros sectores') || b.hi - a.hi);
-
-  sec.append(el('h2', null, 'Por sector'),
-    el('p', 'lead', 'Porcentaje con afectación alta o crítica. Solo se muestran sectores con respuestas suficientes para preservar la confidencialidad.'));
-  const panel = el('div', 'panel');
-  rows.forEach(r => {
-    const row = el('div', 'sector-row');
-    row.append(el('span', 'bar-label', r.s), stack(r.items), el('span', 'bar-val', pct(r.hi)));
-    panel.append(row);
-  });
-  panel.append(legend(ORD.afectacion.map(([label, tone]) => ({ label, tone })), false));
-  sec.append(panel);
-}
-
 function renderAbout() {
   const a = $('about');
   a.replaceChildren();
-  const sectors = nominal(values('sector')).map(i => i.label).sort((x, y) => x.localeCompare(y, 'es'));
   a.append(el('p', 'about-title', 'Resultados preliminares'));
   a.append(el('p', null, 'Datos cambian con las nuevas respuestas.'));
   a.append(el('p', null, 'Si una empresa respondió más de una vez se considera su respuesta más reciente.'));
-  if (sectors.length) a.append(el('p', null, 'Sectores representados: ' + sectors.join('; ') + '.'));
 }
 
 /* ---------- Datos en vivo ---------- */
@@ -1631,7 +1679,7 @@ function load() {
     google.script.run.withSuccessHandler(onPayload).withFailureHandler(onError).getData();
     return;
   }
-  if (!CFG.apiUrl || /https://script.google.com/macros/s/AKfycbxDXnacrnPrhIkVGcqObMwMOX-BedJ3vGJhp0buCTnNfBm5zusuYjISYeQWXUc_QLPsag/exec/.test(CFG.apiUrl)) { onError(new Error('Falta configurar la URL de datos (apiUrl).')); return; }
+  if (!CFG.apiUrl || !CFG.apiUrl.startsWith('https://script.google.com/macros/s/') || !CFG.apiUrl.endsWith('/exec')) { onError(new Error('Falta configurar la URL de datos (apiUrl).')); return; }
   fetch(CFG.apiUrl + (CFG.apiUrl.includes('?') ? '&' : '?') + 'datos=1', { cache: 'no-store' })
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(onPayload)
