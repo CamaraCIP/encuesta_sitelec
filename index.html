@@ -556,19 +556,16 @@ window.CIP_ASSETS = {
 <div id="live" class="live" role="status">Conectando con la hoja de respuestas</div>
 
 <script>
-/* ============================================================
-   CONFIGURACIÓN: pega aquí la URL de la aplicación web de Apps Script
-   (la que termina en /exec). Debe estar implementada con acceso
-   "Cualquier persona".
-   ============================================================ */
+/* Fuente: archivo CSV de métricas agregadas de la rama datos.
+   El navegador NO consulta Apps Script ni recibe respuestas individuales. */
 const CFG = {
-  apiUrl: 'https://script.google.com/macros/s/AKfycbxDXnacrnPrhIkVGcqObMwMOX-BedJ3vGJhp0buCTnNfBm5zusuYjISYeQWXUc_QLPsag/exec',
+  dataUrl: 'https://raw.githubusercontent.com/CamaraCIP/encuesta_sitelec/datos/indicadores.csv',
   institution: 'Cámara de Industrias y Producción',
   unit: 'Dirección Técnica',
   title: 'Situación eléctrica del sector productivo',
   subtitle: 'Encuesta CIP, octubre 2026',
   logoUrl: '',
-  refreshSeconds: 60,
+  refreshSeconds: 120,
   minGroup: 5,                // un sector se muestra solo con al menos este número de respuestas
 };
 const LOCALE = 'es-EC';
@@ -940,8 +937,9 @@ function titular(m) {
 const durLabel = md => (/^m[aá]s de/i.test(md.label) ? lower(md.label) : lower(md.label) + ' o más');
 const BASES = ['duracion', 'dias', 'proporcion', 'efectos', 'efectos', 'afectacion', 'aviso', 'condiciones'];
 function lastResponse() {
-  if (tsIdx < 0 || !data) return null;
-  return data.rows.map(r => r[tsIdx]).filter(notEmpty).map(x => new Date(x)).sort((a, b) => b - a)[0] || null;
+  if (!M || !M.generatedAt) return null;
+  const date = new Date(M.generatedAt);
+  return Number.isNaN(date.getTime()) ? null : date;
 }
 
 /* ---------- Capítulos del relato ---------- */
@@ -1515,7 +1513,7 @@ function refresh() {
    [c0 ? c0.p : NaN, c0 ? 'prioriza ' + lower(c0.label) : '']].filter(([v]) => Number.isFinite(v) && v > 0).forEach(([v, txt]) => {
     const d = el('div', 'cstat'); d.append(el('div', 'cstat-num', pct(v)), el('div', 'cstat-txt', txt)); cs.append(d);
   });
-  $('foot-text').textContent = (CFG.institution || 'CIP') + ' · Resultados agregados y anónimos' + (lastResponse() ? ' · Datos al ' + lastResponse().toLocaleDateString(LOCALE, { dateStyle: 'long' }) : '');
+  $('foot-text').textContent = (CFG.institution || 'CIP') + ' · Indicadores agregados' + (lastResponse() ? ' · Corte publicado el ' + lastResponse().toLocaleDateString(LOCALE, { dateStyle: 'long' }) : '');
   renderSummary();
   renderClosing();
   renderAbout();
@@ -1674,42 +1672,84 @@ function renderAbout() {
 /* ---------- Datos en vivo ---------- */
 let lastPayload = '', lastOk = 0, failing = false, errText = '', pollTimer = null;
 
-function load() {
-  if (window.google && google.script && google.script.run) {
-    google.script.run.withSuccessHandler(onPayload).withFailureHandler(onError).getData();
-    return;
+/* El CSV utiliza metric,json_value: cada fila contiene un valor JSON.
+   No se solicita al navegador ninguna respuesta individual. */
+function parseAggregatedCSV(csvText) {
+  const lines = csvText.replace(/^\uFEFF/, '').trim().split(/\r?\n/);
+  if (lines.shift() !== 'metric,json_value') throw new Error('Encabezado CSV incompatible');
+  const result = Object.create(null);
+  lines.forEach((line, index) => {
+    const match = /^"((?:[^"]|"")*)","((?:[^"]|"")*)"$/.exec(line);
+    if (!match) throw new Error('Fila CSV inválida: ' + (index + 2));
+    const key = match[1].replace(/""/g, '"');
+    if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(key) || Object.prototype.hasOwnProperty.call(result, key)) {
+      throw new Error('Clave de métrica duplicada o inválida');
+    }
+    result[key] = JSON.parse(match[2].replace(/""/g, '"'));
+  });
+  if (String(result.schema_version) !== '1') throw new Error('Versión de indicadores no compatible');
+  if (!result.n || typeof result.n !== 'object') throw new Error('CSV sin cobertura de variables');
+  for (const base of BASES) {
+    if (!Object.prototype.hasOwnProperty.call(result.n, base)) {
+      throw new Error('Indicador de cobertura faltante: ' + base);
+    }
   }
-  if (!CFG.apiUrl || !CFG.apiUrl.startsWith('https://script.google.com/macros/s/') || !CFG.apiUrl.endsWith('/exec')) { onError(new Error('Falta configurar la URL de datos (apiUrl).')); return; }
-  fetch(CFG.apiUrl + (CFG.apiUrl.includes('?') ? '&' : '?') + 'datos=1', { cache: 'no-store' })
-    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
-    .then(onPayload)
+  for (const key of ['sev','dur','aviso','cambio','prop','auto','lim','mec','ef','co','byCov','sevLong','cambioCond','pillars']) {
+    if (!Array.isArray(result[key])) throw new Error('Distribución faltante: ' + key);
+  }
+  if (!Number.isFinite(result.hiCrit) || !Number.isFinite(result.noFullCut)) {
+    throw new Error('Indicadores centrales no válidos');
+  }
+  if (!result.generatedAt || Number.isNaN(new Date(result.generatedAt).getTime())) {
+    throw new Error('Fecha de publicación inválida');
+  }
+  return result;
+}
+function load() {
+  if (!CFG.dataUrl) { onError(new Error('Falta configurar el CSV agregado')); return; }
+  const url = CFG.dataUrl + (CFG.dataUrl.includes('?') ? '&' : '?') + 'v=' + Date.now();
+  fetch(url, { cache: 'no-store', mode: 'cors' })
+    .then(r => { if (!r.ok) throw new Error('CSV no disponible (HTTP ' + r.status + ')'); return r.text(); })
+    .then(onAggregateCSV)
     .catch(onError);
 }
-function onError(err) { failing = true; errText = (err && err.message) || String(err); tickStatus(); }
-function onPayload(payload) {
-      lastOk = Date.now(); failing = false; errText = '';
-      tickStatus();
-      if (payload === lastPayload) return;
-      const parsed = JSON.parse(payload);
-      if (!parsed || !Array.isArray(parsed.headers) || !Array.isArray(parsed.rows)) { onError(new Error('Formato de datos inválido')); return; }
-      lastPayload = payload;
-      data = parsed;
-      idx = {};
-      Object.keys(Q).forEach(k => { idx[k] = data.headers.findIndex(h => Q[k].test(h)); });
-      tsIdx = data.headers.findIndex((h, i) => {
-        const v = data.rows.map(r => r[i]).filter(notEmpty);
-        return v.length && v.every(x => typeof x === 'string' && ISO.test(x));
-      });
-      if (!data.rows.length) { $('story').replaceChildren(el('p', 'loading', 'Aún no hay respuestas. El relato se armará solo cuando llegue la primera.')); return; }
-      M = compute();
+function onError(err) {
+  failing = true;
+  errText = (err && err.message) || String(err);
+  tickStatus();
+}
+function onAggregateCSV(payload) {
+  try {
+    const parsed = parseAggregatedCSV(payload);
+    if (payload !== lastPayload) {
+      parsed.ver = ++ver;
+      M = parsed;
       refresh();
+      lastPayload = payload;
+    }
+    lastOk = Date.now();
+    failing = false;
+    errText = '';
+    tickStatus();
+  } catch (err) { onError(err); }
 }
 function tickStatus() {
   const s = $('live');
-  if (failing) { s.className = 'live err'; s.textContent = 'Sin conexión con la hoja; reintentando'; s.title = errText; }
-  else if (lastOk) { s.className = 'live ok'; s.textContent = 'En vivo, actualizado ' + ago(new Date(lastOk)); s.title = ''; }
+  if (failing) {
+    s.className = 'live err';
+    s.textContent = M ? 'CSV no disponible · mostrando el último corte' : 'No se pudieron cargar los indicadores';
+    s.title = errText;
+  } else if (lastOk) {
+    s.className = 'live ok';
+    s.textContent = 'Indicadores publicados ' + (lastResponse() ? ago(lastResponse()) : 'recientemente');
+    s.title = lastResponse() ? 'Corte UTC: ' + lastResponse().toISOString() : '';
+  }
 }
-function startPolling() { stopPolling(); load(); pollTimer = setInterval(load, (CFG.refreshSeconds || 30) * 1000); }
+function startPolling() {
+  stopPolling();
+  load();
+  pollTimer = setInterval(load, (CFG.refreshSeconds || 120) * 1000);
+}
 function stopPolling() { clearInterval(pollTimer); pollTimer = null; }
 
 /* ---------- Portada ---------- */
