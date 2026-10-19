@@ -1631,7 +1631,7 @@ function load() {
     google.script.run.withSuccessHandler(onPayload).withFailureHandler(onError).getData();
     return;
   }
-  if (!CFG.apiUrl || /PEGA_AQUI/.test(CFG.apiUrl)) { onError(new Error('Falta configurar la URL de datos (apiUrl).')); return; }
+  if (!CFG.apiUrl || /https://script.google.com/macros/s/AKfycbxDXnacrnPrhIkVGcqObMwMOX-BedJ3vGJhp0buCTnNfBm5zusuYjISYeQWXUc_QLPsag/exec/.test(CFG.apiUrl)) { onError(new Error('Falta configurar la URL de datos (apiUrl).')); return; }
   fetch(CFG.apiUrl + (CFG.apiUrl.includes('?') ? '&' : '?') + 'datos=1', { cache: 'no-store' })
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(onPayload)
