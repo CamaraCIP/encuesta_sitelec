@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E2A52">
 <title>Situación eléctrica del sector productivo | CIP</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0E2A52">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@ window.CIP_ASSETS = {
   dirTecnica: 'data:image/webp;base64,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'
 };
 </script>
+
 <style>
   /* Identidad institucional CIP (tomada del Informe ejecutivo de autogeneración, octubre 2026) */
   :root {
@@ -56,19 +57,20 @@ window.CIP_ASSETS = {
     .foot .foot-in .logo-white { display: block; }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   html, body { margin: 0; }
   body { background: var(--bg); color: var(--ink); font: 400 17px/1.5 var(--body); font-variant-numeric: tabular-nums; }
   strong { font-weight: 700; }
   button { font: inherit; font-size: .9rem; color: var(--ink); background: transparent; border: 1px solid var(--line); padding: 5px 14px; cursor: pointer; }
   button:hover { border-color: var(--blue); color: var(--blue); }
-  button:focus-visible, a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
-  [hidden] { display: none !important; }
+  button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
   #progress { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--blue); z-index: 50; }
 
   /* Portada */
-  .cover { min-height: 100svh; background: var(--navy); color: #fff; position: relative; display: flex; flex-direction: column; overflow: hidden; }
+  .cover { min-height: 100vh; background: var(--navy); color: #fff; position: relative; display: flex; flex-direction: column; overflow: hidden; }
   .cover .ring { position: absolute; right: -170px; top: -150px; width: min(640px, 90vw); opacity: .13; pointer-events: none; }
   .cover-inner { position: relative; width: 100%; max-width: 1240px; margin: 0 auto; padding: 34px 24px 0; flex: 1; display: flex; flex-direction: column; }
   .brandline { display: inline-flex; flex-direction: column; align-items: stretch; align-self: flex-start; }
@@ -89,19 +91,138 @@ window.CIP_ASSETS = {
   .scroll-cue { position: relative; text-align: center; margin: 0; padding: 14px 0 22px; font-family: var(--head); font-size: .95rem; color: var(--sky); }
   .scroll-cue::after { content: ""; display: block; width: 10px; height: 10px; margin: 8px auto 0; border-right: 2px solid var(--sky); border-bottom: 2px solid var(--sky); transform: rotate(45deg); }
 
+  /* Narrativa */
+  .cover-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px 28px; margin-top: 30px; max-width: 900px; }
+  .cstat { border-top: 3px solid var(--blue); padding-top: 10px; }
+  .cstat-num { font-family: var(--head); font-weight: 600; font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1; }
+  .cstat-txt { color: var(--mist); font-size: .95rem; line-height: 1.35; margin-top: 6px; }
+  .chapter-num { margin: 0 0 10px; font-family: var(--head); font-weight: 500; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+  .chapter-note { margin: 0 0 4vh; max-width: 75ch; font-size: .82rem; color: var(--muted); border-left: 3px solid var(--bar-lo); padding-left: 12px; }
+  .step-card .k { margin: 0 0 6px; font-family: var(--head); font-weight: 500; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+  .step-card .h { margin: 0 0 8px; font-family: var(--head); font-weight: 600; font-size: 1.32rem; line-height: 1.22; color: var(--title); }
+  .step-card .b { margin: 0; font-size: 1.08rem; line-height: 1.5; }
+  .reading { margin: 22px 0 0; font-size: .88rem; color: var(--muted); max-width: 95ch; border-left: 3px solid var(--navy); padding: 8px 14px; background: var(--card); }
+  .gv { display: grid; gap: 10px; margin: 6px 0 16px; }
+  .gv-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: center; gap: 10px; }
+  .gv-lbl { font-size: .86rem; text-align: right; }
+  .gv-track { position: relative; height: 26px; background: var(--track); }
+  .gv-track i { position: absolute; top: 0; bottom: 0; left: 0; width: 0; transition: width 1s cubic-bezier(.3,.7,.2,1), opacity .5s; font-style: normal; }
+  .gv-cut { background: var(--blue); }
+  .gv-bk { background: var(--strong); }
+  .gv-gap { left: 52% !important; background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(38,115,227,.35) 6px 10px); border: 1.5px dashed var(--blue);
+            color: var(--blue); font-size: .75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; opacity: 0; }
+  .gv.on .gv-cut { width: 100%; }
+  .gv.on .gv-bk { width: 52%; transition-delay: .35s; }
+  .gv.on .gv-gap { width: 48%; opacity: 1; transition-delay: 1s; }
+  .gv-big { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; font-size: .92rem; color: var(--muted); }
+  .gv-num { font-family: var(--head); font-weight: 600; font-size: 2.4rem; color: var(--blue); line-height: 1; white-space: nowrap; }
+  .chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; position: relative; }
+  .node { position: relative; text-align: center; opacity: .3; transition: opacity .45s; }
+  .node.lit { opacity: 1; }
+  .node + .node::before { content: "→"; position: absolute; left: -22px; top: 50%; font-family: var(--head); font-size: 1.3rem; color: var(--blue); }
+  .node-tag { font-family: var(--head); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .node svg { width: 34px; height: 34px; fill: none; stroke: var(--strong); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .node.hot svg { stroke: var(--blue); }
+  .gauge { position: relative; height: 150px; width: 54px; margin: 10px auto 8px; background: var(--track); }
+  .gauge i { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: var(--bar-lo); transition: height 1s cubic-bezier(.3,.7,.2,1); }
+  .node.hot .gauge i { background: var(--blue); }
+  .node-pct { font-family: var(--head); font-weight: 600; font-size: 1.8rem; line-height: 1; color: var(--title); min-height: 1.8rem; }
+  .node.hot .node-pct { color: var(--blue); }
+  .node-label { font-size: .84rem; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+  .policy { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 8px; }
+  .pcard { background: var(--panel); border-top: 4px solid var(--navy); padding: 20px 22px; }
+  .pcard + .pcard { border-top-color: var(--blue); }
+  .pcard .k { margin: 0 0 4px; font-family: var(--head); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+  .pcard h3 { margin: 0 0 14px; font-family: var(--head); font-weight: 600; font-size: 1.2rem; color: var(--title); }
+  .scheme { display: grid; gap: 6px; }
+  .srow { display: grid; grid-template-columns: 64px 1fr; gap: 8px; align-items: center; font-size: .78rem; color: var(--muted); }
+  .strk { position: relative; height: 14px; background: var(--track); }
+  .strk i { position: absolute; top: 0; bottom: 0; background: var(--blue); }
+  .scap { margin: 10px 0 8px; font-size: .82rem; font-weight: 700; color: var(--title); }
+
+  /* Revisión narrativa */
+  .day.top { background: var(--sky); }
+  .day.top svg { opacity: 1; }
+  .day.mark { outline: 2px solid var(--blue); outline-offset: 1px; }
+  .cal-top { background: var(--sky); }
+  .cal-legend { margin-top: 12px; }
+  .covmx { display: grid; gap: 12px; margin-bottom: 4px; }
+  .cmrow { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: 12px; align-items: center; }
+  .cmhead { display: flex; align-items: center; gap: 8px; }
+  .mini-bat { width: 18px; height: 30px; flex: none; }
+  .mini-bat .shell { fill: none; stroke: var(--strong); stroke-width: 5; }
+  .mini-bat .cap { fill: var(--strong); }
+  .cmlabel { font-size: .86rem; line-height: 1.2; }
+  .cmrow .stack { margin: 0; height: 26px; }
+  .roof { position: relative; height: 150px; margin: 22px 0 26px; border-left: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+          background: repeating-linear-gradient(135deg, transparent 0 7px, rgba(38, 115, 227, .2) 7px 11px); }
+  .roof-bk { position: absolute; left: 0; bottom: 0; width: 0; height: 0; background: var(--strong); transition: width 1s cubic-bezier(.3,.7,.2,1), height 1s cubic-bezier(.3,.7,.2,1); }
+  .roof-bk::before { content: "techo"; position: absolute; left: 4px; top: -17px; font-size: .72rem; font-weight: 700; color: var(--strong); }
+  .roof-bk::after { content: "Respaldo"; position: absolute; left: 8px; bottom: 6px; font-size: .74rem; color: var(--panel); white-space: nowrap; }
+  .roof.on .roof-bk { width: 58%; height: 52%; }
+  .roof-y { position: absolute; left: 6px; top: -20px; font-size: .72rem; color: var(--muted); }
+  .roof-x { position: absolute; right: 0; bottom: -19px; font-size: .72rem; color: var(--muted); }
+  .roof-gap { position: absolute; right: 10px; top: 22%; font-size: .8rem; font-weight: 700; color: var(--blue); opacity: 0; transition: opacity .5s 1s; }
+  .roof.on .roof-gap { opacity: 1; }
+  .costs { display: grid; gap: 22px; padding-top: 6px; }
+  .cost { transition: opacity .4s; }
+  .cost.dim { opacity: .3; }
+  .cost-top { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; align-items: center; margin-bottom: 6px; }
+  .cost svg { width: 28px; height: 28px; fill: none; stroke: var(--strong); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .cost.hot svg { stroke: var(--blue); }
+  .cost-label { font-size: .98rem; line-height: 1.25; }
+  .cost-pct { font-family: var(--head); font-weight: 600; font-size: 1.9rem; line-height: 1; color: var(--title); }
+  .cost.hot .cost-pct { color: var(--blue); }
+  .cost-trk { height: 16px; background: var(--track); position: relative; }
+  .cost-trk i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--bar-lo); transition: width 1s cubic-bezier(.3,.7,.2,1); }
+  .cost.lit .cost-trk i { width: var(--w); }
+  .cost.hot .cost-trk i { background: var(--blue); }
+  .same { display: grid; gap: 8px; margin-bottom: 6px; }
+  .same-row { display: grid; grid-template-columns: 64px minmax(0, 1fr) 34px; gap: 10px; align-items: center; font-size: .78rem; color: var(--muted); }
+  .same-trk { position: relative; height: 14px; background: var(--track); }
+  .same-trk i { position: absolute; left: 34%; width: 30%; top: 0; bottom: 0; background: var(--strong); }
+  .same-imp { width: 26px; height: 26px; border-radius: 50%; transform: scale(var(--s)); justify-self: center; }
+  .same-cap { margin: 2px 0 0 74px; font-size: .78rem; font-weight: 700; color: var(--title); }
+  .gfx-sub { margin: 14px 0 0; font-size: .85rem; color: var(--muted); }
+  .meter { width: min(100%, 360px); display: block; margin: 0 auto; overflow: visible; }
+  .meter .mseg { fill: none; stroke-width: 22; }
+  .meter .mlabel { font-size: 10px; fill: var(--muted); text-anchor: middle; }
+  .meter .needle { transform-box: view-box; transform-origin: 120px 124px; transition: transform 1.3s cubic-bezier(.3,.7,.2,1); }
+  .meter .needle line { stroke: var(--title); stroke-width: 4; stroke-linecap: round; }
+  .meter .needle circle { fill: var(--title); }
+  .meter .mbig { font-family: var(--head); font-weight: 600; font-size: 22px; fill: var(--title); text-anchor: middle; }
+  .meter .msmall { font-size: 9.5px; fill: var(--muted); text-anchor: middle; }
+  .pillars { display: grid; gap: 10px; }
+  .pillar { background: var(--card); border-left: 4px solid var(--blue); padding: 12px 16px; }
+  .pillar-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .pillar-name { font-family: var(--head); font-weight: 600; color: var(--title); font-size: 1.08rem; }
+  .pillar-pct { font-family: var(--head); font-weight: 600; font-size: 1.9rem; color: var(--blue); line-height: 1; }
+  .pillar-desc { margin: 2px 0 8px; font-size: .84rem; color: var(--muted); }
+  .pillar-opts { display: grid; gap: 5px; }
+  .popt { display: grid; grid-template-columns: minmax(0, 1fr) 90px 40px; gap: 8px; align-items: center; font-size: .8rem; line-height: 1.2; }
+  .popt-trk { height: 8px; background: var(--track); position: relative; }
+  .popt-trk i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--sky); transition: width .9s cubic-bezier(.3,.7,.2,1); }
+  .pillars.on .popt-trk i { width: var(--w); }
+  .popt-val { text-align: right; font-weight: 700; }
+  .closing { background: var(--navy); color: #fff; margin-top: 16vh; position: relative; overflow: hidden; }
+  .closing .ring { position: absolute; right: -160px; bottom: -220px; width: min(560px, 80vw); opacity: .1; pointer-events: none; }
+  .closing-in { position: relative; max-width: 1240px; margin: 0 auto; padding: 16vh 24px; }
+  .closing .k { margin: 0 0 16px; font-family: var(--head); font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sky); }
+  .closing blockquote { margin: 0; font-family: var(--head); font-weight: 600; font-size: clamp(1.7rem, 4vw, 2.9rem); line-height: 1.2; max-width: 30ch; }
+
   /* Resumen ejecutivo */
-  .summary-inner { max-width: 1240px; margin: 0 auto; padding: 8vh 24px 0; }
+  .summary-inner { max-width: 1240px; margin: 0 auto; padding: 5vh 24px 0; }
   .summary h2, .chapter-head h2, .plain h2 { margin: 0; font-family: var(--head); font-weight: 600; color: var(--title); line-height: 1.12; }
   .summary h2 { font-size: clamp(1.9rem, 4.4vw, 2.8rem); }
   .key { margin: 18px 0 26px; background: var(--callout); border-left: 5px solid var(--navy); padding: 18px 22px; }
   .synth { margin: 0; font-size: clamp(1.1rem, 2.1vw, 1.35rem); line-height: 1.5; max-width: 70ch; }
   .synth strong, .step-card strong { color: var(--blue); }
   .kcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
-  .kcard { display: block; text-decoration: none; background: var(--navy); color: #fff; padding: 18px 16px; text-align: center; }
+  .kcard { display: block; text-decoration: none; background: var(--navy); color: #fff; padding: 18px 16px; text-align: center; transition: background-color .2s; }
   .kcard:hover { background: var(--blue); }
-  .kcard-base { display: block; margin-top: 9px; color: #D8E6F9; font-size: .8rem; }
+  .kcard:focus-visible, .toc a:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
   .toc { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 16px; }
-  .toc a { display: inline-block; border: 1px solid var(--line); padding: 7px 11px; color: var(--title); text-decoration: none; font-size: .9rem; }
+  .toc a { display: inline-block; border: 1px solid var(--line); padding: 7px 12px; color: var(--title); text-decoration: none; font-size: .9rem; background: var(--panel); }
   .toc a:hover { border-color: var(--blue); background: var(--callout); }
   .kcard.hero { background: var(--blue); }
   .kcard-num { font-family: var(--head); font-weight: 600; font-size: 2.5rem; line-height: 1; margin-bottom: 8px; white-space: nowrap; }
@@ -109,82 +230,42 @@ window.CIP_ASSETS = {
 
   /* Capítulos */
   .chapter { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-  .chapter-head { padding: 11vh 0 2vh; max-width: 780px; }
-  body:not(.show-bases) .chapter-base, body:not(.show-bases) .graphic-base, body:not(.show-bases) .kcard-base { display: none; }
-  .chapter-base { font-size: .86rem !important; margin-top: 8px !important; color: var(--muted); }
+  .chapter-head { padding: 16vh 0 2vh; max-width: 780px; }
   .chapter-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); max-width: 26ch; }
   .chapter-head p { margin: 10px 0 0; font-size: 1.1rem; color: var(--muted); }
 
   .scrolly { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 56px; }
   .graphic { grid-column: 2; grid-row: 1; align-self: start; position: sticky; top: 9vh; height: 82vh; display: flex; align-items: center; justify-content: center; }
-  .steps { grid-column: 1; grid-row: 1; padding-bottom: 9vh; }
-  .step { min-height: 70vh; display: flex; align-items: center; }
-  .step:first-child { min-height: 63vh; }
-  .step-card { font-size: 1.2rem; line-height: 1.45; padding: 20px 22px; background: var(--callout); border-left: 5px solid var(--bar-lo); opacity: .72; transition: opacity .35s, border-color .35s; }
+  .steps { grid-column: 1; grid-row: 1; padding-bottom: 20vh; }
+  .step { min-height: 88vh; display: flex; align-items: center; }
+  .step:first-child { min-height: 70vh; }
+  .step-card { font-size: 1.3rem; line-height: 1.45; padding: 22px 24px; background: var(--callout); border-left: 5px solid var(--bar-lo); opacity: .4; transition: opacity .35s, border-color .35s; }
   .step.active .step-card { opacity: 1; border-left-color: var(--blue); }
 
   .gfx { width: 100%; max-width: 640px; background: var(--panel); border-top: 4px solid var(--navy); padding: 26px 28px; position: relative; }
   .gfx-title { margin: 0 0 16px; font-family: var(--head); font-weight: 600; font-size: 1.02rem; color: var(--title); }
   .gfx-note { margin: 14px 0 0; font-size: .82rem; color: var(--muted); }
-  .graphic-base { margin: 10px 0 0; font-size: .79rem; color: var(--muted); }
-  .mobile-gfx { display: none; }
-  .no-data { padding: 14px; border-left: 3px solid var(--line); background: var(--card); }
   .view { transition: opacity .45s; }
   .view.off { opacity: 0; pointer-events: none; position: absolute; inset: 26px 28px; }
   .fade { transition: opacity .45s; }
   .fade.off { opacity: 0; }
 
-  /* En móvil cada escena contiene su propio gráfico animado y su explicación.
-     No existen capas sticky superpuestas ni recortes verticales del gráfico. */
   @media (max-width: 860px) {
     body { font-size: 16px; }
-    .cover-inner { padding: 24px 18px 0; }
-    .cover h1 { font-size: clamp(1.85rem, 7.2vw, 3rem); }
-    .cover .sub { font-size: 1rem; }
-    .cover-main { padding: 26px 0; }
-    .brandline img { width: 160px; }
-    .powerline { max-height: 18svh; }
-    .summary-inner { padding: 55px 16px 0; }
-    .chapter { padding: 0 16px; }
-    .chapter-head { padding: 66px 0 18px; }
-    .chapter-head h2 { max-width: none; font-size: clamp(1.45rem, 5vw, 2rem); }
     .scrolly { display: block; }
-    .graphic { display: none; }
-    .steps { padding: 0 0 20px; }
-    .step, .step:first-child { min-height: 0; display: flex; flex-direction: column; align-items: stretch; gap: 12px; padding: 0 0 28px; }
-    .mobile-gfx { display: block; width: 100%; max-width: none; padding: 16px; overflow: visible; }
-    .view.off { inset: 16px; }
-    .step-card { font-size: 1.04rem; opacity: 1; padding: 15px 18px; box-shadow: none; }
-    .plain { padding: 60px 16px 0; }
-    .foot { padding: 20px 16px 36px; }
-    .about { margin-top: 60px; padding: 18px 16px; }
-    .live { position: static; width: max-content; max-width: calc(100% - 32px); margin: 12px 16px 0 auto; }
-    .gfx-title { font-size: .96rem; }
-    .gfx-note { font-size: .79rem; }
-    .legend { font-size: .82rem; gap: 5px 12px; }
-    .waffle { max-width: 280px; }
-    .cal { max-width: 340px; }
-    .clock { max-width: 210px; }
-    .hbar { grid-template-columns: minmax(0, 34%) minmax(0, 1fr) 50px; gap: 7px; }
-    .hbar .lbl { font-size: .78rem; text-align: left; overflow-wrap: anywhere; }
-    .hbar .trk { height: 18px; }
-    .hbar .val { font-size: .8rem; }
-    .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
-    .tile { padding: 11px; }
-    .tile svg { width: 24px; height: 24px; }
-    .tile-pct { font-size: 1.35rem; }
-    .tile-label { font-size: .79rem; overflow-wrap: anywhere; }
-    .check { gap: 9px; grid-template-columns: 25px minmax(0,1fr); }
-    .check svg { width: 25px; height: 25px; }
-    .bar-head { font-size: .84rem; }
-    .kcards { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .kcard { padding: 14px 9px; }
-    .kcard-num { font-size: clamp(1.7rem, 6vw, 2.3rem); }
-    .kcard p { font-size: .81rem; }
-    .step:not(.active) .mobile-gfx .waffle rect { transition-delay: 0ms !important; }
+    .chapter { padding: 0 14px; }
+    .chapter-head { padding: 12vh 0 3vh; }
+    .graphic { position: sticky; top: 0; height: 58vh; z-index: 3; padding: 8px 0 10px; background: var(--bg); align-items: flex-start; }
+    .gfx { padding: 14px 16px; max-height: 100%; overflow: hidden; box-shadow: 0 8px 18px -10px rgba(14, 42, 82, .35); }
+    .gfx-title { font-size: .92rem; margin-bottom: 10px; }
+    .gfx-note { font-size: .76rem; margin-top: 8px; }
+    .view.off { inset: 14px 16px; }
+    .steps { position: relative; z-index: 1; padding-bottom: 34vh; }
+    .step, .step:first-child { min-height: 42vh; align-items: center; }
+    .step-card { font-size: 1.05rem; padding: 16px 18px; opacity: .55; }
+    .live { right: 10px; bottom: 10px; }
+    .brandline img { width: 160px; }
   }
-  @media (max-width: 360px) { .hbar { grid-template-columns: minmax(0, 36%) minmax(0,1fr) 46px; gap: 5px; } .mobile-gfx { padding: 12px; } .tiles { gap: 4px; } .tile { padding: 7px; } }
-  @media print { .mobile-gfx { display: none !important; } }
 
   /* Cuadrícula de 100 */
   .waffle { width: min(100%, 380px); display: block; margin: 0 auto; }
@@ -196,8 +277,10 @@ window.CIP_ASSETS = {
 
   /* Calendario */
   .cal { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; max-width: 460px; margin: 0 auto; }
-  .day { aspect-ratio: 1.25; background: var(--track); position: relative; border: 1px solid var(--line); transition: background-color .4s; }
-  .day.on { background: var(--blue); }
+  .day { aspect-ratio: 1.25; background: var(--track); position: relative; padding: 4px 7px; font-size: .8rem; color: var(--muted); transition: background-color .4s; }
+  .day svg { position: absolute; right: 6px; bottom: 5px; width: 38%; height: 38%; fill: #fff; opacity: 0; transition: opacity .4s; }
+  .day.on { background: var(--blue); color: #fff; }
+  .day.on svg { opacity: 1; }
   .day.part { background: linear-gradient(90deg, var(--blue) var(--p), var(--track) var(--p)); }
   .bins { margin-top: 22px; }
 
@@ -290,6 +373,8 @@ window.CIP_ASSETS = {
   @media (max-width: 560px) { .sector-row { grid-template-columns: 1fr 60px; } .sector-row .stack { grid-column: 1 / -1; grid-row: 2; } }
   .about { max-width: 1240px; margin: 12vh auto 0; padding: 22px 24px 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; line-height: 1.45; }
   .about p { margin: 0 0 6px; max-width: 95ch; }
+  .about .about-title { font-family: var(--head); font-weight: 600; font-size: .95rem; color: var(--title); margin-bottom: 8px; }
+  .cmlabel small { display: block; font-size: .74rem; color: var(--muted); margin-top: 2px; }
   .foot { display: block; padding: 16px 24px 70px; border-top: 4px solid var(--blue); font-size: .82rem; color: var(--muted); background: var(--panel); }
   .foot-in { max-width: 1240px; margin: 0 auto; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .foot img { width: 130px; display: block; }
@@ -308,42 +393,113 @@ window.CIP_ASSETS = {
   .excerpts li { font-size: .97rem; line-height: 1.4; padding-left: 14px; border-left: 3px solid var(--sky); }
   .fulltext { margin-top: 24px; }
   .foot .logo-white { display: none; }
-  .excerpts:empty { display: none; }
-  .status-time { display: inline; }
 
   .live { position: fixed; right: 16px; bottom: 16px; z-index: 40; display: inline-flex; align-items: center; gap: 8px; font-size: .8rem;
           background: var(--panel); color: var(--ink); border: 1px solid var(--line); padding: 5px 12px 5px 10px; }
   .live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--bar-lo); }
   .live.ok::before { background: var(--live); }
   .live.err::before { background: var(--blue); }
-  @media (max-width: 860px) {
-    .live { position: static; width: max-content; max-width: calc(100% - 32px); margin: 12px 16px 0 auto; }
-    .hbar { grid-template-columns: minmax(0, 34%) minmax(0, 1fr) 50px; gap: 7px; }
-    .hbar .lbl { font-size: .78rem; text-align: left; overflow-wrap: anywhere; }
-    .tiles { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
-    .tile { padding: 10px; }
-    .tile-pct { font-size: 1.35rem; }
-    .tile-label { font-size: .79rem; overflow-wrap: anywhere; }
-    /* La longitud de las barras representa proporciones observadas y se revela por escena. */
-    .mobile-gfx .hbar .trk i, .mobile-gfx .bar-fill { transform: scaleX(0); transform-origin: left; transition: transform .7s cubic-bezier(.3,.7,.2,1); }
-    .step[data-revealed="true"] .mobile-gfx .hbar .trk i, .step[data-revealed="true"] .mobile-gfx .bar-fill { transform: scaleX(1); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .mobile-gfx .hbar .trk i, .mobile-gfx .bar-fill { transform: scaleX(1) !important; }
-  }
   .loading { text-align: center; color: var(--muted); padding: 20vh 24px; }
 
   .tone-sev0 { background: var(--sev0); } .tone-sev1 { background: var(--sev1); } .tone-sev2 { background: var(--sev2); } .tone-sev3 { background: var(--sev3); }
   .tone-pos { background: var(--pos); } .tone-mid { background: var(--mid); } .tone-neg { background: var(--neg); } .tone-na { background: var(--na); }
   .tone-lead { background: var(--blue); } .tone-rest { background: var(--bar-lo); }
 
+  /* Celular: tamaños compactos para que cada gráfico quepa completo en la zona fija superior
+     (este bloque va al final para prevalecer sobre los estilos base de cada componente) */
+  @media (max-width: 860px) {
+    .graphic .gfx-note { display: none; }
+    .waffle { width: min(100%, 240px); }
+    .cal { max-width: 250px; gap: 4px; }
+    .day svg { width: 34%; height: 34%; right: 4px; bottom: 3px; }
+    .bins { margin-top: 10px; }
+    .clock { width: min(100%, 165px); }
+    .stack { height: 24px; margin-top: 8px; }
+    .stack .seg { font-size: .78rem; }
+    .legend { font-size: .76rem; gap: 3px 10px; margin-top: 6px; }
+    .batteries { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .bat svg { width: 34px; height: 58px; }
+    .bat-pct { font-size: 1.25rem; margin-top: 6px; }
+    .bat-label { font-size: .72rem; }
+    .bars { gap: 6px; }
+    .hbar { grid-template-columns: minmax(0, 118px) minmax(0, 1fr) 50px; gap: 7px; }
+    .hbar .lbl { font-size: .76rem; }
+    .hbar .trk { height: 15px; }
+    .hbar .val { font-size: .8rem; }
+    .tiles { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .checks { gap: 6px; }
+    .check { grid-template-columns: 18px minmax(0, 1fr); gap: 8px; }
+    .check svg { width: 18px; height: 18px; }
+    .check .bar-head { font-size: .74rem; line-height: 1.25; margin-bottom: 2px; }
+    .check .bar-track { height: 6px; }
+    .arow + .arow { margin-top: 12px; }
+    .arow h4 { font-size: .86rem; }
+    .axis { font-size: .76rem; }
+    .kcards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kcard-num { font-size: clamp(1.7rem, 7vw, 2.3rem); }
+  }
+  @media (max-width: 860px) and (max-height: 800px) {
+    .tile { padding: 6px 7px; }
+    .tile svg { width: 18px; height: 18px; }
+    .tile-pct { font-size: 1.02rem; margin-top: 2px; }
+    .tile-label { font-size: .66rem; line-height: 1.2; }
+    .waffle { width: min(100%, 215px); }
+    .cal { max-width: 225px; }
+  }
+  @media (max-width: 860px) {
+    .step-card .k { font-size: .68rem; margin-bottom: 4px; }
+    .step-card .h { font-size: 1.05rem; margin-bottom: 6px; }
+    .step-card .b { font-size: .95rem; line-height: 1.45; }
+    .cover-stats { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
+    .cstat-num { font-size: 1.9rem; }
+    .gv-row { grid-template-columns: 100px minmax(0, 1fr); }
+    .gv-lbl { font-size: .74rem; }
+    .gv-track { height: 20px; }
+    .gv-num { font-size: 1.8rem; }
+    .gv-big { font-size: .8rem; }
+    .chain { gap: 16px; }
+    .node + .node::before { left: -15px; font-size: 1rem; }
+    .gauge { height: 100px; width: 40px; }
+    .node svg { width: 24px; height: 24px; }
+    .node-pct { font-size: 1.35rem; min-height: 1.35rem; }
+    .node-label { font-size: .7rem; }
+    .node-tag { font-size: .6rem; }
+  }
+  @media (max-width: 860px) {
+    .cmrow { grid-template-columns: minmax(0, 120px) minmax(0, 1fr); gap: 8px; }
+    .cmlabel { font-size: .74rem; }
+    .cmlabel small { font-size: .62rem; }
+    .mini-bat { width: 13px; height: 22px; }
+    .cmrow .stack { height: 20px; }
+    .covmx { gap: 8px; }
+    .roof { height: 82px; margin: 18px 0 22px; }
+    .gv-big { margin-bottom: 0; }
+    .costs { gap: 14px; }
+    .cost-label { font-size: .82rem; }
+    .cost-pct { font-size: 1.4rem; }
+    .cost svg { width: 22px; height: 22px; }
+    .cost-top { grid-template-columns: 24px minmax(0, 1fr) auto; }
+    .cost-trk { height: 12px; }
+    .same { gap: 5px; }
+    .same-row { grid-template-columns: 54px minmax(0, 1fr) 26px; font-size: .7rem; }
+    .same-trk { height: 10px; }
+    .same-imp { width: 20px; height: 20px; }
+    .same-cap { margin-left: 64px; font-size: .72rem; }
+    .gfx-sub { margin-top: 8px; font-size: .76rem; }
+    .meter { width: min(100%, 270px); }
+    .pillars { gap: 6px; }
+    .pillar { padding: 7px 10px; }
+    .pillar-name { font-size: .92rem; }
+    .pillar-pct { font-size: 1.3rem; }
+    .pillar-desc { display: none; }
+    .popt { grid-template-columns: minmax(0, 1fr) 54px 32px; font-size: .68rem; gap: 6px; }
+    .closing-in { padding: 12vh 20px; }
+  }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition-duration: 0s !important; transition-delay: 0s !important; animation: none !important; }
   }
   @media print {
-    .live, #progress, .scroll-cue, .more, .mobile-gfx { display: none !important; }
-    .graphic { display: block; }
-    .step[hidden], .chapter[hidden] { display: none !important; }
+    .live, #progress, .scroll-cue, .more { display: none; }
     .graphic { position: static; height: auto; }
     .step { min-height: 0; }
     .step-card { opacity: 1; }
@@ -361,14 +517,14 @@ window.CIP_ASSETS = {
       <p class="kicker" id="subtitle"></p>
       <h1 id="title"></h1>
       <p class="sub" id="cover-sub"></p>
-      <span class="prelim">Encuesta en actualización · resultados de empresas participantes</span>
+      <div class="cover-stats" id="cover-stats"></div>
+      <span class="prelim">Resultados preliminares, se actualizan con cada respuesta</span>
     </div>
   </div>
   <svg class="powerline" id="powerline" viewBox="0 0 1200 230" preserveAspectRatio="xMidYMax meet" aria-hidden="true"></svg>
   <p class="scroll-cue">Desliza para recorrer los resultados</p>
 </header>
 
-<div id="live" class="live" aria-live="off">Conectando con la hoja de respuestas</div>
 <section id="summary" class="summary"></section>
 <main id="story"><p class="loading">Cargando las respuestas…</p></main>
 <footer class="foot">
@@ -378,15 +534,16 @@ window.CIP_ASSETS = {
   </div>
   <div class="foot-dt"><img id="logo-dt" alt="Dirección Técnica" hidden></div>
 </footer>
+<div id="live" class="live" role="status">Conectando con la hoja de respuestas</div>
 
 <script>
 /* ============================================================
-   CONFIGURACIÓN
-   apiUrl: URL de la aplicación web de Apps Script (termina en /exec),
-   implementada con acceso "Cualquier persona".
+   CONFIGURACIÓN: pega aquí la URL de la aplicación web de Apps Script
+   (la que termina en /exec). Debe estar implementada con acceso
+   "Cualquier persona".
    ============================================================ */
 const CFG = {
-  apiUrl: 'https://script.google.com/macros/s/AKfycbxDXnacrnPrhIkVGcqObMwMOX-BedJ3vGJhp0buCTnNfBm5zusuYjISYeQWXUc_QLPsag/exec',
+  apiUrl: 'PEGA_AQUI_LA_URL_EXEC',
   institution: 'Cámara de Industrias y Producción',
   unit: 'Dirección Técnica',
   title: 'Situación eléctrica del sector productivo',
@@ -394,9 +551,6 @@ const CFG = {
   logoUrl: '',
   refreshSeconds: 60,
   minGroup: 5,                // un sector se muestra solo con al menos este número de respuestas
-  showBases: false,           // true: muestra "Base: n respuestas" en cada indicador
-  publishOpenExcerpts: true,  // extractos cortos (con datos de contacto ocultos) en los temas abiertos
-  showRawResponses: false,    // true: permite desplegar el texto completo de las respuestas abiertas
 };
 const LOCALE = 'es-EC';
 const MIN_GROUP = Number(CFG.minGroup) || 5;
@@ -419,6 +573,7 @@ const ORD = {
   proporcion: [['Toda la operación', 'pos'], ['Más de la mitad', 'pos'], ['Hasta la mitad', 'mid'], ['Solo procesos o funciones críticas', 'neg'], ['Ninguna', 'neg']],
   autonomia: [['Más de 24 horas', 'pos'], ['Más de 8 y hasta 24 horas', 'mid'], ['4–8 horas', 'neg'], ['Menos de 4 horas', 'neg']],
 };
+const BATTERY_LEVEL = { 'toda la operacion': 1, 'mas de la mitad': .72, 'hasta la mitad': .48, 'solo procesos o funciones criticas': .2, 'ninguna': 0 };
 const KNOWN = {
   efectos: ['Producción detenida o reducida', 'Ajustes de turnos o jornadas', 'Mayor gasto en combustible', 'Retrasos en entregas',
     'Daños o fallas en equipos', 'Horas extraordinarias o mayores costos laborales', 'Afectación de cadena de frío',
@@ -524,6 +679,23 @@ const severityLabel = v => clean(String(v).split(':')[0]);
 const hoursOf = v => { const m = String(v).match(/(\d+)/); return m ? Number(m[1]) + (/m[aá]s de/i.test(v) ? 0.5 : 0) : NaN; };
 const daysOf = v => { const m = String(v).match(/(\d+)/); return m ? Number(m[1]) : (/ningun/i.test(v) ? 0 : NaN); };
 const real = items => items.filter(i => i.label !== OTHER);
+/* Rango en horas de una categoría ("Más de 8 y hasta 24 horas", "4–8 horas", "Más de 24 horas", "6 horas") */
+function rangeOf(v) {
+  if (!notEmpty(v)) return null;
+  const s = norm(v);
+  let x;
+  if ((x = s.match(/mas de (\d+) y hasta (\d+)/))) return { min: +x[1] + 0.01, max: +x[2] };
+  if ((x = s.match(/mas de (\d+)/))) return { min: +x[1] + 0.01, max: Infinity };
+  if ((x = s.match(/menos de (\d+)/))) return { min: 0, max: +x[1] - 0.01 };
+  if ((x = s.match(/(\d+)\s*-\s*(\d+)/))) return { min: +x[1], max: +x[2] };
+  if ((x = s.match(/(\d+)/))) return { min: +x[1], max: +x[1] };
+  return null;
+}
+const PILLARS = [
+  { name: 'Previsibilidad', desc: 'Cronogramas fijos, estables y anunciados con anticipación.', re: /cronograma fijo|anticipaci/ },
+  { name: 'Flexibilidad', desc: 'Adaptar el esquema a cada proceso: bloques más cortos, días no consecutivos, horarios de menor actividad.', re: /bloques|consecutiv|nocturno|menor actividad|diferenciad/ },
+  { name: 'Reconocimiento', desc: 'Valorar la generación propia y asegurar el combustible que la sostiene.', re: /reconocer|generacion propia|combustible/ },
+];
 
 function compute() {
   const m = { ver: ++ver, n: Object.fromEntries(Object.keys(Q).map(k => [k, values(k).length])) };
@@ -534,7 +706,6 @@ function compute() {
   m.low = share(m.sev, ['Bajo']);
 
   const days = values('dias').map(daysOf).filter(Number.isFinite);
-  m.n.dias = days.length;
   m.meanDays = days.length ? days.reduce((a, b) => a + b, 0) / days.length : NaN;
   m.over5 = days.length ? days.filter(d => d > 5).length / days.length : NaN;
   m.dayBins = withShares([['Sin interrupciones', d => d === 0, 'pos'], ['1 a 2 días', d => d >= 1 && d <= 2, 'pos'], ['3 a 5 días', d => d >= 3 && d <= 5, 'mid'],
@@ -542,8 +713,7 @@ function compute() {
     .map(([label, f, tone]) => ({ label, tone, n: days.filter(f).length })).filter(b => b.n), days.length);
 
   const dur = values('duracion').map(v => ({ label: clean(v), h: hoursOf(v) })).filter(x => Number.isFinite(x.h)).sort((a, b) => a.h - b.h);
-  m.n.duracion = dur.length;
-  m.medDur = dur.length ? dur[Math.floor((dur.length - 1) / 2)] : null; // mediana inferior: siempre una categoría real
+  m.medDur = dur.length ? dur[Math.floor((dur.length - 1) / 2)] : null;
   m.long = dur.length ? dur.filter(x => x.h >= 24).length / dur.length : NaN;
   const durMap = new Map();
   dur.forEach(x => durMap.set(x.label, { label: x.label, h: x.h, n: (durMap.get(x.label) || { n: 0 }).n + 1 }));
@@ -553,7 +723,7 @@ function compute() {
   m.early = share(m.aviso, ['Más de 72 horas', '48–72 horas']);
   m.late = share(m.aviso, ['Menos de 24 horas', 'No recibió información previa']);
   m.cambio = ordinal(values('cambio'), ORD.cambio);
-  m.noWarn = share(m.cambio, ['Cambió sin aviso previo']); // proporción sobre quienes contestaron esta pregunta
+  m.noWarn = share(m.cambio, ['Cambió sin aviso previo']);
 
   m.prop = ordinal(values('proporcion'), ORD.proporcion);
   m.full = share(m.prop, ['Toda la operación']);
@@ -573,6 +743,60 @@ function compute() {
   m.changeLate = share(m.cambio, ['Menos de 24 horas']);
   m.longAuto = share(m.auto, ['Más de 24 horas']);
 
+  // Frecuencia: umbral del 20 % con mayor exposición
+  m.p80Days = sortedDays.length ? sortedDays[sortedDays.length - Math.max(1, Math.ceil(sortedDays.length * 0.2))] : NaN;
+  // Respaldo: primero cuánto cubre, luego por cuánto tiempo; y frente a la duración del corte, empresa por empresa
+  const ip = idx.proporcion, ia = idx.autonomia, idu = idx.duracion;
+  const isFull = r => norm(r[ip]) === norm('Toda la operación');
+  const pa = ip >= 0 && ia >= 0 ? data.rows.filter(r => notEmpty(r[ip]) && rangeOf(r[ia])) : [];
+  const fullR = pa.filter(isFull), partR = pa.filter(r => !isFull(r));
+  // Cobertura parcial = más de la mitad, hasta la mitad o solo procesos o funciones críticas
+  m.byCov = [
+    { label: 'Cobertura total', sub: 'Toda la operación', lvl: 1, n: fullR.length, auto: ordinal(fullR.map(r => r[ia]), ORD.autonomia) },
+    { label: 'Cobertura parcial', sub: 'Más de la mitad, hasta la mitad o solo procesos críticos', lvl: 0.45, n: partR.length, auto: ordinal(partR.map(r => r[ia]), ORD.autonomia) },
+  ].filter(gr => gr.n);
+  m.fullLong = fullR.length ? fullR.filter(r => /mas de 24/.test(norm(r[ia]))).length / fullR.length : NaN;
+  m.partShort = partR.length ? partR.filter(r => rangeOf(r[ia]).max <= 8).length / partR.length : NaN;
+  m.lt4 = share(m.auto, ['Menos de 4 horas']);
+  const autoOrder = ORD.autonomia.map(([l]) => norm(l)).reverse();
+  m.minAuto = [...m.auto].sort((a, b) => autoOrder.indexOf(norm(a.label)) - autoOrder.indexOf(norm(b.label)))[0] || null;
+  const pad = idu >= 0 ? pa.filter(r => rangeOf(r[idu])) : [];
+  const cls = { A: 0, B: 0, C: 0, D: 0 };
+  let pg = 0;
+  pad.forEach(r => {
+    const d = rangeOf(r[idu]), a = rangeOf(r[ia]);
+    const over = d.min > a.max, covers = a.min >= d.max;
+    if (!isFull(r)) { cls.C++; if (over) pg++; }
+    else if (covers) cls.A++;
+    else if (over) cls.B++;
+    else cls.D++;
+  });
+  const nb = pad.length;
+  m.cls = Object.fromEntries(Object.entries(cls).map(([k, v]) => [k, nb ? v / nb : NaN]));
+  m.noFullCut = nb ? (cls.B + cls.C) / nb : NaN;
+  m.partialGap = nb ? pg / nb : NaN;
+  // Afectación: entre empresas con cortes de 24 horas o más, e índice de severidad (0 = bajo, 1 = crítico)
+  const isv = idx.afectacion;
+  const longRows = idu >= 0 && isv >= 0 ? data.rows.filter(r => notEmpty(r[isv]) && hoursOf(r[idu]) >= 24) : [];
+  m.sevLong = ordinal(longRows.map(r => r[isv]), ORD.afectacion, severityLabel);
+  const scale = ORD.afectacion.map(([l]) => norm(l));
+  const svx = values('afectacion').map(v => scale.indexOf(norm(severityLabel(v)))).filter(i => i >= 0);
+  m.sevIndex = svx.length ? svx.reduce((a, b) => a + b, 0) / svx.length / 3 : NaN;
+  const mecV = values('mecanismos');
+  m.hasGen = mecV.length ? mecV.filter(x => !/ningun|no (tiene|cuenta|dispone)/i.test(norm(x))).length / mecV.length : NaN;
+  m.fuel = share(m.ef, ['Mayor gasto en combustible']);
+  m.labor = share(m.ef, ['Horas extraordinarias o mayores costos laborales']);
+  m.shifts = share(m.ef, ['Ajustes de turnos o jornadas']);
+  m.delays = share(m.ef, ['Retrasos en entregas']);
+  // Cambios de horario: porcentaje condicional entre quienes vieron cambiar el cronograma
+  const cb = values('cambio').filter(v => !/no recibi[oó] un cronograma|no hubo cambio|no cambi/i.test(norm(v)));
+  m.changeBase = cb.length;
+  m.cambioCond = ordinal(cb, ORD.cambio);
+  m.changeLateCond = cb.length ? cb.filter(v => /menos de 24|sin aviso/i.test(norm(v))).length / cb.length : NaN;
+  const cv = values('condiciones');
+  m.pillars = PILLARS.map(pl => ({ ...pl, p: cv.length ? cv.filter(v => pl.re.test(norm(v))).length / cv.length : NaN,
+    items: real(m.co).filter(it => PILLARS.find(x => x.re.test(norm(it.label))) === pl) }));
+  m.volt = nominal(values('voltaje')).map(i => i.label);
   m.medida = values('medida').map(tidy);
   m.comentarios = values('comentarios').map(tidy);
   return m;
@@ -627,7 +851,7 @@ function allocate(items, total = 100) {
   return cells;
 }
 function makeWaffle() {
-  const s = svgEl('svg', { viewBox: '0 0 104 104', class: 'waffle', role: 'img', 'aria-label': 'Distribución porcentual de respuestas' });
+  const s = svgEl('svg', { viewBox: '0 0 104 104', class: 'waffle', role: 'img' });
   for (let i = 0; i < 100; i++) {
     const r = svgEl('rect', { x: (i % 10) * 10.4 + .7, y: Math.floor(i / 10) * 10.4 + .7, width: 9, height: 9 });
     r.style.transitionDelay = (i * 6) + 'ms';
@@ -665,111 +889,51 @@ function ritmo(meanDays) {
   return 'menos de un día cada dos semanas';
 }
 function sintesis(m) {
-  const freq = m.meanDays >= 4 ? 'frecuentes' : m.meanDays >= 2 ? 'recurrentes' : 'esporádicas';
-  const dur = m.long >= 0.5 ? 'prolongadas' : (m.medDur && m.medDur.h >= 8 ? 'de duración considerable' : 'de corta duración');
+  const freq = m.meanDays >= 4 ? 'frecuentes' : m.meanDays >= 2 ? 'recurrentes' : 'esporádicos';
+  const dur = m.long >= 0.5 ? 'prolongados' : (m.medDur && m.medDur.h >= 8 ? 'de duración considerable' : 'de corta duración');
   const aviso = m.late >= 0.5 ? 'se anuncian con poca anticipación' : 'en general se anuncian con anticipación';
-  const resp = m.full < 0.5
-    ? 'La generación propia no alcanza para sostener la operación completa en la mayoría de los casos.'
-    : 'La mayoría logra sostener su operación completa con generación propia.';
+  const resp = Number.isFinite(m.gap) && m.gap > 0
+    ? t`En el <strong>${pct(m.gap)}</strong> de las empresas, el corte dura más que el respaldo disponible.`
+    : (m.full < 0.5 ? 'La generación propia no alcanza para sostener la operación completa en la mayoría de los casos.' : 'La mayoría logra sostener su operación completa con generación propia.');
   const [f] = quien(m.hiCrit);
-  let s = t`Las interrupciones son ${freq} y ${dur}, y ${aviso}. ${resp} ` +
-    t`En este contexto, ${f.replace('empresas', 'empresas participantes')} (<strong>${pct(m.hiCrit)}</strong>) reporta una afectación alta o crítica sobre su operación.`;
+  let s = t`Los cortes son ${freq} y ${dur}, y ${aviso}. ` + resp + ' ' + t`En este contexto, ${f.replace('empresas', 'empresas participantes')} (<strong>${pct(m.hiCrit)}</strong>) reporta una afectación alta o crítica sobre su operación.`;
   const c = real(m.co)[0];
   if (c) s += t` La principal demanda es ${q(lower(c.label))} (<strong>${pct(c.p)}</strong>).`;
   return s;
 }
+
+function tesis(m) {
+  return Number.isFinite(m.hiCrit) ? 'El aporte de la industria tiene techo y factura múltiple' : (CFG.title || '');
+}
+function bajada(m) {
+  const parts = [];
+  if (m.noFullCut >= 0.3) parts.push('expone los límites de la autogeneración');
+  if (m.fuel >= 0.5 || m.labor >= 0.5) parts.push('incrementa los costos');
+  if (m.prod >= 0.5 || m.shifts >= 0.5) parts.push('obliga a reorganizar la producción');
+  return parts.length ? 'La energía que falta no solo interrumpe el suministro: ' + joinY(parts) + '.' : (CFG.title || '') + ': resultados de la encuesta institucional.';
+}
 function titular(m) {
   if (!Number.isFinite(m.hiCrit)) return CFG.title || '';
-  const freq = m.meanDays >= 4 ? 'frecuentes' : m.meanDays >= 2 ? 'recurrentes' : 'esporádicas';
-  const dur = m.long >= 0.5 ? 'prolongadas' : (m.medDur && m.medDur.h >= 8 ? 'extensas' : 'breves');
-  return 'Interrupciones ' + freq + ' y ' + dur + ': el ' + pct(m.hiCrit) + ' de las empresas participantes reporta una afectación alta o crítica.';
+  const freq = m.meanDays >= 4 ? 'frecuentes' : m.meanDays >= 2 ? 'recurrentes' : 'esporádicos';
+  const dur = m.long >= 0.5 ? 'prolongados' : (m.medDur && m.medDur.h >= 8 ? 'extensos' : 'breves');
+  return 'Cortes ' + freq + ' y ' + dur + ': el ' + pct(m.hiCrit) + ' de las empresas participantes reporta una afectación alta o crítica.';
 }
 const durLabel = md => (/^m[aá]s de/i.test(md.label) ? lower(md.label) : lower(md.label) + ' o más');
-const BATTERY_LEVEL = { 'toda la operacion': 1, 'mas de la mitad': .72, 'hasta la mitad': .48, 'solo procesos o funciones criticas': .2, 'ninguna': 0 };
+const BASES = ['duracion', 'dias', 'proporcion', 'efectos', 'efectos', 'afectacion', 'aviso', 'condiciones'];
 function lastResponse() {
   if (tsIdx < 0 || !data) return null;
   return data.rows.map(r => r[tsIdx]).filter(notEmpty).map(x => new Date(x)).sort((a, b) => b - a)[0] || null;
 }
 
 /* ---------- Capítulos del relato ---------- */
-/* Cada capítulo tiene un titular y pasos que se recalculan con cada respuesta nueva.
-   El estado -1 del gráfico es el previo a la llegada del lector. */
+/* Arco: duración → frecuencia → techo del respaldo → costos (y su heterogeneidad) → producción →
+   afectación → incertidumbre → agenda → cierre. Rótulo (k), titular (h) y texto (b) se recalculan con cada respuesta. */
 const CHAPTERS = [
   {
-    base: 'afectacion',
-    title: m => pct(m.hiCrit) + ' de las empresas participantes reporta una afectación alta o crítica',
-    intro: m => 'Percepción del impacto de las interrupciones sobre la operación en los últimos 30 días.',
-    init(g) {
-      g.append(el('p', 'gfx-title', 'Nivel de afectación sobre la operación'));
-      g._w = makeWaffle(); g.append(g._w);
-      g._leg = el('div'); g.append(g._leg);
-      g.append(el('p', 'gfx-note', 'Cada cuadro representa aproximadamente 1 punto porcentual; los valores están redondeados.'));
-    },
-    steps: [
-      m => sujeto(m.hiCrit, 'califica', 'califican') + t` la afectación como alta o crítica: reducción de producción, aumento importante de costos o riesgo para la continuidad.` +
-        (m.crit > 0 ? t` En el <strong>${pct(m.crit)}</strong> de los casos es crítica.` : ''),
-      m => {
-        const modal = [...m.sev].sort((a, b) => b.n - a.n)[0];
-        if (!modal) return '';
-        return t`El nivel más frecuente es ${q(lower(modal.label))} (<strong>${pct(modal.p)}</strong>). ` +
-          elNum(m.low, 0.25) + t`<strong>${pct(m.low)}</strong> considera el impacto manejable sin cambios relevantes.`;
-      },
-    ],
-    draw(g, m, s) {
-      const order = [...m.sev].reverse();
-      const cells = allocate(order);
-      const hi = it => ['Alto', 'Crítico'].includes(it.label);
-      paintWaffle(g._w, i => {
-        const it = order[cells[i]];
-        if (!it || s < 0) return 'var(--track)';
-        if (s === 0) return hi(it) ? 'var(--' + it.tone + ')' : 'var(--na)';
-        return 'var(--' + it.tone + ')';
-      });
-      g._w.setAttribute('aria-label', m.sev.map(i => i.label + ' ' + pct(i.p)).join(', '));
-      g._leg.replaceChildren(s < 0 ? el('div') : s === 0
-        ? legend([{ label: 'Alta o crítica', tone: 'sev2', p: m.hiCrit }, { label: 'Resto', tone: 'na', p: 1 - m.hiCrit }])
-        : legend(m.sev));
-    },
-  },
-  {
-    base: 'dias',
-    title: m => 'Interrupciones en ' + dec(m.meanDays) + ' de cada 30 días, en promedio',
-    intro: m => 'Días con al menos una interrupción; no equivalen a jornadas completas sin energía.',
-    init(g) {
-      g.append(el('p', 'gfx-title', 'Un mes de referencia: 30 días'));
-      const cal = el('div', 'cal');
-      for (let d = 1; d <= 30; d++) {
-        const c = el('div', 'day');
-        c.setAttribute('aria-hidden', 'true');
-        c.style.transitionDelay = (d * 35) + 'ms';
-        cal.append(c);
-      }
-      g._cal = cal; g.append(cal);
-      g.append(el('p', 'gfx-note', 'Ilustración del promedio: cada casilla es un día con al menos una interrupción, no una fecha observada.'));
-      g._bins = el('div', 'bins fade off'); g.append(g._bins);
-    },
-    steps: [
-      m => t`En promedio, las empresas registraron al menos una interrupción en <strong>${dec(m.meanDays)} de cada 30 días</strong>, es decir, ${ritmo(m.meanDays)}.`,
-      m => cap((Number.isFinite(m.medDays) ? t`la mitad de las empresas tuvo interrupciones en <strong>${dias(m.medDays)} o menos</strong>; ` : '') +
-        (m.over5 > 0 ? t`el <strong>${pct(m.over5)}</strong> superó los cinco días con interrupciones.` : 'ninguna superó los cinco días con interrupciones.')),
-    ],
-    draw(g, m, s) {
-      const full = s < 0 ? 0 : Math.floor(m.meanDays || 0);
-      const frac = s < 0 ? 0 : (m.meanDays || 0) - full;
-      [...g._cal.children].forEach((c, k) => {
-        c.classList.toggle('on', k < full);
-        c.classList.toggle('part', k === full && frac > 0.05);
-        c.style.setProperty('--p', Math.round(frac * 100) + '%');
-      });
-      g._bins.classList.toggle('off', s < 1);
-      if (g._ver !== m.ver) { g._bins.replaceChildren(el('p', 'gfx-title', 'Distribución de días con interrupciones'), bars(m.dayBins)); g._ver = m.ver; }
-    },
-  },
-  {
-    base: 'duracion',
-    title: m => !m.medDur ? 'Duración de las interrupciones'
-      : 'La mitad de las empresas reporta interrupciones promedio de ' + durLabel(m.medDur),
+    tag: 'Duración',
+    title: m => (m.long >= 0.5 ? 'La producción no puede ponerse en pausa indefinidamente' : 'La duración de los cortes condiciona la operación'),
     intro: m => 'Duración promedio de una interrupción continua, declarada por cada empresa para los últimos 30 días.',
+    note: m => 'Ventana de referencia: últimos 30 días.',
     init(g) {
       g.append(el('p', 'gfx-title', 'Duración típica de una interrupción continua'));
       const s = svgEl('svg', { viewBox: '0 0 200 200', class: 'clock', role: 'img' });
@@ -795,9 +959,12 @@ const CHAPTERS = [
       g._stack = el('div', 'fade off'); g.append(g._stack);
     },
     steps: [
-      m => (m.medDur ? t`En la mitad de las empresas, una interrupción continua dura en promedio <strong>${durLabel(m.medDur)}</strong>.` : ''),
-      m => sujeto(m.long, 'declara', 'declaran') + t` una duración promedio de 24 horas o más` +
-        (m.shortDur > 0 ? t`; el <strong>${pct(m.shortDur)}</strong>, de 4 horas o menos.` : '.'),
+      { k: 'Lo habitual',
+        h: m => (!m.medDur ? '' : m.medDur.h > 24 ? 'Un corte típico supera el día completo.' : m.medDur.h >= 8 ? 'Un corte típico ocupa una jornada.' : 'Un corte típico dura pocas horas.'),
+        b: m => (m.medDur ? t`En la mitad de las empresas, una interrupción continua dura en promedio <strong>${durLabel(m.medDur)}</strong>: ` +
+          t`el <strong>${pct(m.long)}</strong> declara cortes de 24 horas o más` +
+          (m.shortDur > 0 ? t` y solo el <strong>${pct(m.shortDur)}</strong>, de 4 horas o menos.` : '.') +
+          (m.long >= 0.3 ? ' Cuando una restricción atraviesa turnos completos, la planificación diaria pierde eficacia.' : '') : '') },
     ],
     draw(g, m, s) {
       const h = s < 0 || !m.medDur ? 0 : m.medDur.h;
@@ -806,190 +973,358 @@ const CHAPTERS = [
       g._small.textContent = s < 0 ? 'horas por interrupción' : 'mediana por empresa';
       g._plus.forEach(p => p.setAttribute('opacity', s >= 0 && h > 24 ? 1 : 0));
       g._clock.setAttribute('aria-label', m.medDur ? 'Duración típica: ' + m.medDur.label : '');
-      g._stack.classList.toggle('off', s < 1);
+      g._stack.classList.toggle('off', s < 0);
       if (g._ver !== m.ver) { g._stack.replaceChildren(stack(m.dur), legend(m.dur)); g._ver = m.ver; }
     },
   },
   {
-    base: 'aviso',
-    title: m => m.late >= 0.5
-      ? pct(m.late) + ' recibió el horario con menos de 24 horas o sin aviso'
-      : pct(m.early) + ' recibió el horario con 48 horas o más de anticipación',
-    intro: m => 'Plazos de comunicación de las interrupciones y de los cambios de horario.',
+    tag: 'Frecuencia',
+    title: m => 'Interrupciones en ' + dec(m.meanDays) + ' de cada 30 días, en promedio',
+    intro: m => 'Días con al menos una interrupción en los últimos 30 días; no equivalen a jornadas completas sin energía.',
+    note: m => 'Cada casilla es un día con al menos una interrupción, no una fecha observada. La mediana divide a las empresas en dos mitades; el 20 % superior agrupa a las de mayor exposición.',
+    init(g) {
+      g.append(el('p', 'gfx-title', 'Últimos 30 días'));
+      const cal = el('div', 'cal');
+      for (let d = 1; d <= 30; d++) {
+        const c = el('div', 'day');
+        const b = svgEl('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true' }); b.append(svgEl('path', { d: BOLT }));
+        c.append(b);
+        c.style.transitionDelay = (d * 35) + 'ms';
+        cal.append(c);
+      }
+      g._cal = cal; g.append(cal);
+      g._leg = el('div', 'legend cal-legend fade off'); g.append(g._leg);
+    },
+    steps: [
+      { k: 'El ritmo',
+        h: m => (m.p80Days >= 2 * m.medDays ? 'La exposición no es pareja entre plantas.' : 'Una exposición relativamente pareja.'),
+        b: m => (Number.isFinite(m.medDays) ? t`La mitad de las empresas tuvo interrupciones en <strong>${dias(m.medDays)} o menos</strong>; ` +
+          t`el 20 % con mayor exposición, en <strong>${dias(m.p80Days)} o más</strong>. Equivale a ${ritmo(m.meanDays)}, en promedio.` : '') },
+    ],
+    draw(g, m, s) {
+      const med = s < 0 ? 0 : (m.medDays || 0), top = s < 0 ? 0 : (m.p80Days || 0);
+      [...g._cal.children].forEach((c, k) => {
+        c.classList.toggle('on', k < med);
+        c.classList.toggle('top', k >= med && k < top);
+        c.classList.toggle('mark', s >= 0 && k === top - 1);
+      });
+      g._leg.classList.toggle('off', s < 0);
+      if (g._ver !== m.ver) {
+        g._leg.replaceChildren();
+        [['tone-neg', 'Mediana: ' + dias(m.medDays)], ['cal-top', '20 % superior: ' + dias(m.p80Days) + ' o más']].forEach(([cls, txt]) => {
+          const sp = el('span'); sp.append(el('i', cls), document.createTextNode(txt)); g._leg.append(sp);
+        });
+        g._ver = m.ver;
+      }
+    },
+  },
+  {
+    tag: 'Respaldo',
+    title: m => (m.noFullCut >= 0.5 ? 'La generación propia sostiene, pero tiene techo' : 'La generación propia sostiene buena parte de la operación'),
+    intro: m => 'Dos preguntas en secuencia: qué parte de la operación cubre la generación propia y por cuánto tiempo puede mantenerla.',
+    note: m => 'La autonomía se lee según el nivel de operación que cada empresa declaró poder cubrir. La comparación con la duración del corte se hace empresa por empresa con los rangos declarados, sin suponer valores para las categorías abiertas. Los porcentajes son de empresas, no de capacidad instalada.',
+    init(g) {
+      g._v = [0, 1, 2, 3].map((_, k) => el('div', 'view' + (k ? ' off' : '')));
+      g.append(...g._v);
+    },
+    steps: [
+      { k: 'Cuánto cubre',
+        h: m => (m.full < 0.5 ? 'Tener respaldo no significa cubrir toda la planta.' : 'La mayoría puede cubrir toda su operación.'),
+        b: m => t`El <strong>${pct(m.hasGen)}</strong> declara alguna forma de generación propia` + (m.mec.length ? t`, principalmente ${lower(m.mec[0].label)}. ` : '. ') +
+          elNum(m.full) + t`<strong>${pct(m.full)}</strong> puede sostener con ella toda su operación.` },
+      { k: 'Por cuánto tiempo',
+        h: m => 'Cobertura no es igual a autonomía.',
+        b: m => (Number.isFinite(m.fullLong) ? t`El <strong>${pct(m.fullLong)}</strong> de quienes cubren toda su operación puede sostenerla más de 24 horas. ` : '') +
+          (Number.isFinite(m.partShort) ? t`El <strong>${pct(m.partShort)}</strong> de quienes solo la cubren parcialmente no supera las 8 horas de autonomía.` : '') },
+      { k: 'El techo',
+        headOnly: true,
+        h: m => {
+          if (!Number.isFinite(m.cls.A)) return '';
+          const n = Math.round(m.cls.A * 10);
+          if (n === 0) return 'Prácticamente ninguna empresa logra mantener su operación frente a los cortes.';
+          if (n === 1) return 'Apenas 1 de cada 10 empresas logra mantener su operación frente a los cortes.';
+          return (n <= 4 ? 'Solo ' : '') + n + ' de cada 10 empresas logran mantener su operación frente a los cortes.';
+        } },
+      { k: 'Por qué no alcanza',
+        h: m => (m.lim.length ? cap(lower(m.lim[0].label)) + '.' : ''),
+        b: m => {
+          const L = lideres(m.lim);
+          if (!L.length) return '';
+          if (L.length > 1) return t`Las principales limitaciones para extender el respaldo son ${joinY(L.map(l => q(lower(l.label))))} (<strong>${pct(L[0].p)}</strong> cada una).`;
+          const second = m.lim[1];
+          return t`Es la principal limitación para extender el respaldo (<strong>${pct(L[0].p)}</strong>)` + (second ? t`, seguida de ${q(lower(second.label))} (${pct(second.p)}).` : '.');
+        } },
+    ],
+    draw(g, m, s) {
+      if (g._ver !== m.ver) {
+        const battery = (lvl, small) => {
+          const sv = svgEl('svg', { viewBox: '0 0 58 100', 'aria-hidden': 'true', class: small ? 'mini-bat' : '' });
+          sv.append(svgEl('rect', { x: 20, y: 2, width: 18, height: 7, class: 'cap' }));
+          sv.append(svgEl('rect', { x: 4, y: 9, width: 50, height: 88, rx: 2, class: 'shell' }));
+          const ih = 80 * lvl;
+          sv.append(svgEl('rect', { x: 9, y: 13 + (80 - ih), width: 40, height: ih, fill: lvl >= 0.7 ? 'var(--strong)' : lvl >= 0.4 ? 'var(--sky)' : 'var(--blue)' }));
+          return sv;
+        };
+        const bats = el('div', 'batteries');
+        m.prop.forEach(it => {
+          const b = el('div', 'bat');
+          b.dataset.label = norm(it.label);
+          b.append(battery(BATTERY_LEVEL[norm(it.label)] ?? 0.5), el('div', 'bat-pct', pct(it.p)), el('div', 'bat-label', it.label));
+          bats.append(b);
+        });
+        g._v[0].replaceChildren(el('p', 'gfx-title', 'Parte de la operación que cubre la generación propia'), bats);
+
+        // Autonomía condicionada al nivel de cobertura
+        const mx = el('div', 'covmx');
+        m.byCov.forEach(gr => {
+          const row = el('div', 'cmrow');
+          const head = el('div', 'cmhead');
+          const lab = el('span', 'cmlabel', gr.label);
+          lab.append(el('small', null, gr.sub));
+          head.append(battery(gr.lvl, true), lab);
+          row.append(head, stack(gr.auto));
+          mx.append(row);
+        });
+        const autoLeg = ORD.autonomia.filter(([l]) => m.auto.some(i => norm(i.label) === norm(l))).map(([label, tone]) => ({ label, tone }));
+        g._v[1].replaceChildren(el('p', 'gfx-title', 'Autonomía según la cobertura'), mx, legend(autoLeg, false));
+
+        // El techo: esquema de cobertura × tiempo y clasificación real
+        const sch = el('div', 'roof');
+        sch.append(el('span', 'roof-y', 'Nivel de operación'), el('span', 'roof-x', 'Duración del corte'), el('i', 'roof-bk'), el('span', 'roof-gap', 'Producción en riesgo'));
+        const items = [
+          { label: 'Cubre solo una parte', tone: 'sev3', p: m.cls.C },
+          { label: 'Cubre todo, pero el corte dura más', tone: 'sev2', p: m.cls.B },
+          { label: 'No concluyente', tone: 'na', p: m.cls.D },
+          { label: 'Cubre todo durante todo el corte', tone: 'pos', p: m.cls.A },
+        ].filter(i => i.p > 0);
+        const big = el('div', 'gv-big');
+        big.append(el('span', 'gv-num', pct(m.noFullCut)), el('span', null, 'no puede sostener toda su operación durante su corte promedio'));
+        g._v[2].replaceChildren(el('p', 'gfx-title', 'El techo del respaldo: cuánto y por cuánto tiempo'), sch, big, stack(items), legend(items));
+        g._roof = sch;
+        g._v[3].replaceChildren(el('p', 'gfx-title', 'Principal limitación para extender la generación propia'), bars(m.lim));
+        g._ver = m.ver;
+      }
+      views(g, Math.max(0, s));
+      g._v[0].classList.toggle('nopct', s < 0);
+      g._v[0].querySelectorAll('.bat').forEach(b => b.classList.toggle('dim', s === 0 && b.dataset.label !== norm('Toda la operación')));
+      g._roof.classList.toggle('on', s === 2);
+    },
+  },
+  {
+    tag: 'Costos',
+    title: m => (m.fuel >= 0.5 ? 'Cuando la red se detiene, producir cuesta más' : 'Seguir operando tiene costos adicionales'),
+    intro: m => 'La generación propia permite sostener actividades, pero añade costos, y no los mismos en todas las plantas.',
+    note: m => 'La encuesta identifica tipos de afectación; no mide su magnitud monetaria. Selección múltiple: los porcentajes no se suman. El esquema de plantas es conceptual; la distribución corresponde a empresas con cortes de 24 horas o más.',
+    init(g) {
+      g._v = [el('div', 'view'), el('div', 'view off')];
+      g.append(...g._v);
+    },
+    steps: [
+      { k: 'El costo directo',
+        h: m => (m.fuel >= 0.5 ? 'La emergencia se paga con combustible.' : 'El combustible pesa en parte de las plantas.'),
+        b: m => (m.fuel > 0 ? sujeto(m.fuel, 'declara', 'declaran') + ' mayor gasto en combustible: sostener la producción con generación propia añade un costo al del suministro ordinario.' : '') },
+      { k: 'El costo extendido',
+        h: m => 'La factura no termina en el combustible.',
+        b: m => {
+          const parts = [];
+          if (m.labor > 0) parts.push(t`el <strong>${pct(m.labor)}</strong> reporta horas extraordinarias o mayores costos laborales`);
+          if (m.damage > 0) parts.push(t`el <strong>${pct(m.damage)}</strong>, daños o fallas en equipos`);
+          return parts.length ? cap(joinY(parts)) + '. La contingencia también se refleja en turnos, mantenimiento y desgaste de activos.' : '';
+        } },
+      { k: 'Procesos distintos',
+        h: m => 'El mismo corte no cuesta lo mismo en todas las plantas.',
+        b: m => (m.sevLong.length >= 2 ? t`Entre las empresas con cortes de 24 horas o más, el nivel de afectación declarado va de ${q(lower(m.sevLong[0].label))} a ${q(lower(m.sevLong[m.sevLong.length - 1].label))}. ` +
+          'El costo depende del proceso productivo, no solo de la duración: un cronograma uniforme reparte el esfuerzo de forma desigual.' : '') },
+    ],
+    draw(g, m, s) {
+      if (g._ver !== m.ver) {
+        const rows = el('div', 'costs');
+        [['Mayor gasto en combustible', m.fuel, 0], ['Horas extraordinarias o mayores costos laborales', m.labor, 1], ['Daños o fallas en equipos', m.damage, 1]].forEach(([label, p, st]) => {
+          if (!(p > 0)) return;
+          const r = el('div', 'cost');
+          r.dataset.step = st;
+          const trk = el('div', 'cost-trk'); const fill = el('i'); fill.style.setProperty('--w', (p * 100).toFixed(1) + '%'); trk.append(fill);
+          const top = el('div', 'cost-top');
+          top.append(icon(label), el('span', 'cost-label', label), el('span', 'cost-pct', pct(p)));
+          r.append(top, trk);
+          rows.append(r);
+        });
+        g._v[0].replaceChildren(el('p', 'gfx-title', 'Principales costos reportados'), rows);
+        // Un mismo corte, impactos distintos
+        const sch = el('div', 'same');
+        const lv = ORD.afectacion.map(([l, tone]) => tone);
+        [['Planta A', 0], ['Planta B', 3], ['Planta C', 1], ['Planta D', 2]].forEach(([pl, k]) => {
+          const row = el('div', 'same-row');
+          const trk = el('div', 'same-trk'); trk.append(el('i'));
+          const imp = el('span', 'same-imp tone-' + lv[k]); imp.style.setProperty('--s', (0.45 + k * 0.25).toFixed(2));
+          row.append(el('span', 'same-pl', pl), trk, imp);
+          sch.append(row);
+        });
+        sch.append(el('p', 'same-cap', 'Misma ventana de corte, impactos distintos'));
+        g._v[1].replaceChildren(el('p', 'gfx-title', 'Un mismo corte, costos distintos'), sch,
+          el('p', 'gfx-sub', 'Afectación entre empresas con cortes de 24 horas o más'), stack(m.sevLong), legend(m.sevLong));
+        g._ver = m.ver;
+      }
+      views(g, s >= 2 ? 1 : 0);
+      g._v[0].querySelectorAll('.cost').forEach(r => {
+        const hot = s >= 0 && +r.dataset.step === s;
+        r.classList.toggle('hot', hot);
+        r.classList.toggle('dim', s >= 0 && s < 2 && !hot);
+        r.classList.toggle('lit', s >= +r.dataset.step);
+      });
+    },
+  },
+  {
+    tag: 'Producción',
+    title: m => (m.prod >= 0.5 ? 'El impacto trasciende la electricidad: alcanza la cadena productiva' : 'El impacto se transmite a la operación'),
+    intro: m => 'El efecto de los cortes pasa de la planta a la organización del trabajo y a los compromisos con clientes.',
+    note: m => 'Secuencia ilustrativa: una misma empresa puede reportar varios efectos; no establece causalidad entre ellos.',
+    init(g) {
+      g.append(el('p', 'gfx-title', 'De la planta al cliente'));
+      const chain = el('div', 'chain');
+      g._nodes = [['En planta', 'Producción detenida o reducida'], ['En la organización', 'Ajustes de turnos o jornadas'], ['En la cadena', 'Retrasos en entregas']].map(([tag, label]) => {
+        const n = el('div', 'node');
+        const gauge = el('div', 'gauge'); const fill = el('i'); gauge.append(fill);
+        n.append(el('div', 'node-tag', tag), icon(label), gauge, el('div', 'node-pct'), el('div', 'node-label', label));
+        n._fill = fill; n._pct = n.querySelector('.node-pct');
+        chain.append(n);
+        return n;
+      });
+      g.append(chain);
+    },
+    steps: [
+      { k: 'En planta',
+        h: m => (m.prod >= 0.5 ? 'La energía que falta se convierte en producción que no se realiza.' : 'Parte de la producción se pierde.'),
+        b: m => (m.prod > 0 ? sujeto(m.prod, 'detuvo o redujo', 'detuvieron o redujeron') + ' su producción a causa de los cortes.' : '') },
+      { k: 'En la organización',
+        h: m => 'Cambiar turnos no elimina el costo: lo reorganiza.',
+        b: m => (m.shifts > 0 ? sujeto(m.shifts, 'reporta', 'reportan') + ' ajustes de turnos o jornadas para acomodarse a los horarios de corte.' : '') },
+      { k: 'En la cadena',
+        h: m => (m.delays >= 0.3 ? 'La disrupción llega al cliente.' : 'Las entregas empiezan a resentirse.'),
+        b: m => (m.delays > 0 ? t`El <strong>${pct(m.delays)}</strong> registra retrasos en entregas: la restricción afecta también la confiabilidad de los compromisos comerciales.` : '') },
+    ],
+    draw(g, m, s) {
+      const vals = [m.prod, m.shifts, m.delays];
+      g._nodes.forEach((n, k) => {
+        const lit = s >= k;
+        n.classList.toggle('lit', lit);
+        n.classList.toggle('hot', s === k);
+        n._fill.style.height = (lit ? (vals[k] || 0) * 100 : 0).toFixed(1) + '%';
+        n._pct.textContent = lit ? pct(vals[k]) : '';
+      });
+    },
+  },
+  {
+    tag: 'Afectación',
+    title: m => pct(m.hiCrit) + ' de las empresas participantes califica la afectación como alta o crítica',
+    intro: m => 'Valoración de cada empresa sobre el efecto de los cortes en su operación durante los últimos 30 días.',
+    note: m => 'La severidad es una valoración declarada por las empresas, no una estimación monetaria de pérdidas. El índice promedia la escala: 0 = bajo, 100 = crítico.',
+    init(g) {
+      g.append(el('p', 'gfx-title', 'Presión sobre la operación'));
+      const s = svgEl('svg', { viewBox: '0 0 240 178', class: 'meter', role: 'img' });
+      const R = 92, cx = 120, cy = 124;
+      const pt = (f, r) => [cx - r * Math.cos(Math.PI * f), cy - r * Math.sin(Math.PI * f)];
+      ORD.afectacion.forEach(([label, tone], k) => {
+        const [x1, y1] = pt(k / 4 + 0.006, R), [x2, y2] = pt((k + 1) / 4 - 0.006, R);
+        s.append(svgEl('path', { d: `M${x1} ${y1} A${R} ${R} 0 0 1 ${x2} ${y2}`, class: 'mseg', style: `stroke: var(--${tone})` }));
+        const [lx, ly] = pt((k + 0.5) / 4, R + 27);
+        const tx = svgEl('text', { x: lx, y: ly + 3, class: 'mlabel' }); tx.textContent = label; s.append(tx);
+      });
+      const needle = svgEl('g', { class: 'needle' });
+      needle.append(svgEl('line', { x1: cx, y1: cy, x2: cx - R + 16, y2: cy }), svgEl('circle', { cx, cy, r: 7 }));
+      s.append(needle);
+      const big = svgEl('text', { x: cx, y: cy + 32, class: 'mbig' });
+      const small = svgEl('text', { x: cx, y: cy + 48, class: 'msmall' }); small.textContent = 'índice de severidad';
+      s.append(big, small);
+      Object.assign(g, { _needle: needle, _mbig: big, _cx: cx, _cy: cy });
+      g.append(s);
+      g._leg = el('div'); g.append(g._leg);
+    },
+    steps: [
+      { k: 'La consecuencia',
+        h: m => (m.hiCrit >= 0.5 ? 'La presión ya alcanza la continuidad operativa.' : 'La presión es significativa, pero desigual.'),
+        b: m => (m.crit > 0
+          ? t`En el <strong>${pct(m.crit)}</strong> de los casos la afectación es crítica: reducción importante de producción, aumento de costos o riesgo para la continuidad.`
+          : t`Ninguna empresa califica la afectación como crítica; el nivel alto implica reducción importante de producción o aumento de costos.`) },
+    ],
+    draw(g, m, s) {
+      const f = s < 0 || !Number.isFinite(m.sevIndex) ? 0 : m.sevIndex;
+      g._needle.style.transform = `rotate(${(f * 180).toFixed(1)}deg)`;
+      g._mbig.textContent = s < 0 ? '' : Math.round(f * 100) + ' / 100';
+      g._leg.replaceChildren(s < 0 ? el('div') : legend(m.sev));
+    },
+  },
+  {
+    tag: 'Información',
+    title: m => (m.late >= 0.5 ? 'La falta de previsibilidad también es una restricción productiva' : 'La anticipación de los avisos, una capacidad de adaptación'),
+    intro: m => 'La anticipación con la que se conocen los horarios de corte es parte de la capacidad de adaptación de las plantas.',
+    note: m => 'El porcentaje sobre cambios de horario se calcula solo entre las empresas que vieron cambiar su cronograma.',
     init(g) {
       const axis = el('div', 'axis');
       axis.append(el('span', null, 'Más anticipación'));
       const cut = el('span', 'cut');
       const b = svgEl('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true' }); b.append(svgEl('path', { d: BOLT }));
-      cut.append(document.createTextNode('Interrupción'), b);
+      cut.append(document.createTextNode('Corte'), b);
       axis.append(cut);
       g.append(axis);
       g._r1 = el('div', 'arow'); g._r2 = el('div', 'arow fade off');
       g.append(g._r1, g._r2);
     },
     steps: [
-      m => sujeto(m.late, 'recibió', 'recibieron') + t` el horario de corte con menos de 24 horas de anticipación o sin aviso previo.`,
-      m => elNum(m.early) + t`<strong>${pct(m.early)}</strong> recibió el horario con 48 horas o más de anticipación.`,
-      m => (m.cambio.length ? t`Cuando el horario cambió, en el <strong>${pct(m.noWarn)}</strong> de los casos no hubo aviso previo` +
-        (m.changeLate > 0 ? t` y en el <strong>${pct(m.changeLate)}</strong> se informó con menos de 24 horas.` : '.') : ''),
+      { k: 'Antes de la interrupción',
+        h: m => (m.late >= 0.5 ? 'La planificación necesita tiempo, y no lo tiene.' : 'La planificación necesita tiempo.'),
+        b: m => sujeto(m.late, 'recibió', 'recibieron') + ' el horario de corte con menos de 24 horas de anticipación o sin aviso previo' +
+          (m.early > 0 ? t`; solo el ${pct(m.early)} contó con 48 horas o más.` : '.') },
+      { k: 'Cuando cambia el horario',
+        h: m => (m.changeLateCond >= 0.5 ? 'La última hora amplifica la incertidumbre.' : 'Los cambios de horario, otra fuente de riesgo.'),
+        b: m => (m.changeBase ? t`Entre las empresas que vieron cambiar el horario, el <strong>${pct(m.changeLateCond)}</strong> fue avisado con menos de 24 horas o no recibió aviso.` : '') },
     ],
     draw(g, m, s) {
-      const early = ['Más de 72 horas', '48–72 horas'].map(norm);
       const late = ['Menos de 24 horas', 'No recibió información previa'].map(norm);
       const chg = ['Cambió sin aviso previo', 'Menos de 24 horas'].map(norm);
-      const hl = s === 0 ? it => late.includes(norm(it.label)) : s === 1 ? it => early.includes(norm(it.label)) : null;
-      g._r1.replaceChildren(el('h4', null, 'Anticipación con la que se conoció el horario'), stack(m.aviso, hl), legend(m.aviso));
-      g._r2.replaceChildren(el('h4', null, 'Aviso cuando el horario cambió'),
-        stack(m.cambio, s === 2 ? it => chg.includes(norm(it.label)) : null), legend(m.cambio));
-      g._r2.classList.toggle('off', s < 2);
+      g._r1.replaceChildren(el('h4', null, 'Anticipación con la que se conoció el horario'), stack(m.aviso, s === 0 ? it => late.includes(norm(it.label)) : null), legend(m.aviso));
+      g._r2.replaceChildren(el('h4', null, 'Aviso cuando el horario cambió (solo quienes lo vivieron)'),
+        stack(m.cambioCond, s === 1 ? it => chg.includes(norm(it.label)) : null), legend(m.cambioCond));
+      g._r2.classList.toggle('off', s < 1);
     },
   },
   {
-    base: 'proporcion',
-    title: m => (m.full < 0.35 ? 'Solo ' : '') + pct(m.full) + ' puede sostener toda su operación con generación propia',
-    intro: m => (m.mec.length ? 'El respaldo descansa principalmente en ' + lower(m.mec[0].label) + ' (' + pct(m.mec[0].p) + ').' : 'Capacidad de respaldo con generación propia.'),
+    tag: 'Demandas',
+    title: m => '¿Qué pide la industria?',
+    intro: m => 'Condiciones que más reducirían el impacto si los cortes son inevitables. Selección múltiple, hasta tres opciones por empresa.',
+    note: m => 'Cada eje agrupa opciones afines; una empresa cuenta en un eje si eligió al menos una de sus opciones.',
     init(g) {
-      g._v0 = el('div', 'view'); g._v1 = el('div', 'view off'); g._v2 = el('div', 'view off');
-      g.append(g._v0, g._v1, g._v2);
+      g.append(el('p', 'gfx-title', 'Tres ejes de la agenda'));
+      g._pill = el('div', 'pillars'); g.append(g._pill);
     },
     steps: [
-      m => elNum(m.full) + t`<strong>${pct(m.full)}</strong> puede sostener toda su operación con generación propia` +
-        (m.critOnly > 0 ? t`; el <strong>${pct(m.critOnly)}</strong> cubre únicamente procesos o funciones críticas.` : '.'),
-      m => (m.auto.length ? sujeto(m.short, 'sostiene', 'sostienen') + t` ese respaldo por 8 horas o menos` +
-        (m.longAuto > 0 ? t`; el <strong>${pct(m.longAuto)}</strong> puede mantenerlo por más de 24 horas.` : '.') : ''),
-      m => {
-        const L = lideres(m.lim);
-        if (!L.length) return '';
-        if (L.length > 1) return t`Las principales limitaciones para extenderlo son ${joinY(L.map(l => q(lower(l.label))))} (<strong>${pct(L[0].p)}</strong> cada una).`;
-        const second = m.lim[1];
-        return t`La principal limitación para extenderlo es ${q(lower(L[0].label))} (<strong>${pct(L[0].p)}</strong>)` +
-          (second ? t`, seguida de ${q(lower(second.label))} (${pct(second.p)}).` : '.');
-      },
+      { k: 'Tres ejes',
+        h: m => 'Previsibilidad, flexibilidad y reconocimiento.',
+        b: m => {
+          const P = m.pillars.filter(p => p.p > 0);
+          return P.length ? cap(joinY(P.map(p => t`${lower(p.name)} (<strong>${pct(p.p)}</strong>)`))) +
+            ': las demandas no son abstractas. Apuntan a poder planificar, adaptar el esquema a cada proceso y valorar el esfuerzo propio.' : '';
+        } },
     ],
     draw(g, m, s) {
       if (g._ver !== m.ver) {
-        // La batería ilustra la categoría de respuesta; el número es la proporción de empresas.
-        const bats = el('div', 'batteries');
-        m.prop.forEach(it => {
-          const lvl = BATTERY_LEVEL[norm(it.label)] ?? 0.5;
-          const b = el('div', 'bat');
-          b.dataset.label = norm(it.label);
-          const sv = svgEl('svg', { viewBox: '0 0 58 100', 'aria-hidden': 'true' });
-          sv.append(svgEl('rect', { x: 20, y: 2, width: 18, height: 7, class: 'cap' }));
-          sv.append(svgEl('rect', { x: 4, y: 9, width: 50, height: 88, rx: 2, class: 'shell' }));
-          const ih = 80 * lvl;
-          sv.append(svgEl('rect', { x: 9, y: 13 + (80 - ih), width: 40, height: ih, fill: lvl >= 0.7 ? 'var(--strong)' : lvl >= 0.4 ? 'var(--sky)' : 'var(--blue)' }));
-          b.append(sv, el('div', 'bat-pct', pct(it.p)), el('div', 'bat-label', it.label));
-          bats.append(b);
-        });
-        g._v0.replaceChildren(el('p', 'gfx-title', 'Parte de la operación que se sostiene con generación propia'), bats,
-          el('p', 'gfx-note', 'El nivel de cada batería ilustra la categoría de respuesta; los porcentajes son proporciones de empresas, no de capacidad instalada.'));
-        g._v1.replaceChildren(el('p', 'gfx-title', 'Tiempo que se puede mantener ese nivel de forma continua'), bars(m.auto));
-        g._v2.replaceChildren(el('p', 'gfx-title', 'Principal limitación para extender la generación propia'), bars(m.lim));
-        g._ver = m.ver;
-      }
-      views(g, s <= 0 ? 0 : s);
-      g._v0.classList.toggle('nopct', s < 0);
-      const keep = [norm('Toda la operación'), norm('Solo procesos o funciones críticas')];
-      g._v0.querySelectorAll('.bat').forEach(b => b.classList.toggle('dim', s === 0 && !keep.includes(b.dataset.label)));
-    },
-  },
-  {
-    base: 'efectos',
-    title: m => {
-      const L = lideres(real(m.ef));
-      return L.length ? pct(L[0].p) + ' reporta ' + joinY(L.map(l => lower(l.label))) : 'Efectos en la operación';
-    },
-    intro: m => 'Efectos de las interrupciones en los últimos 30 días. Cada empresa podía marcar varios, por lo que los porcentajes no se suman.',
-    init(g) {
-      g.append(el('p', 'gfx-title', 'Empresas que reportan cada efecto'));
-      g._tiles = el('div', 'tiles'); g.append(g._tiles);
-    },
-    steps: [
-      m => {
-        const L = lideres(real(m.ef));
-        if (!L.length) return '';
-        return sujeto(L[0].p, 'reporta', 'reportan') + ' ' + joinY(L.map(l => t`${q(lower(l.label))}`)) +
-          (L.length > 1 ? ': son los efectos más extendidos.' : ': es el efecto más extendido.');
-      },
-      m => (m.prod > 0 ? sujeto(m.prod, 'detuvo o redujo', 'detuvieron o redujeron') + ' su producción a causa de las interrupciones.' : ''),
-      m => {
-        const others = real(m.ef).filter(i => PHYSICAL.includes(i.label) && i.label !== 'Daños o fallas en equipos').map(i => lower(i.label));
-        if (!(m.damage > 0) && !others.length) return '';
-        return t`Las interrupciones también causan daño físico: el <strong>${pct(m.damage)}</strong> reporta daños o fallas en equipos` +
-          (others.length ? t`; también se reportan ${joinY(others)}.` : '.');
-      },
-    ],
-    draw(g, m, s) {
-      if (g._ver !== m.ver) {
-        g._tiles.replaceChildren(...m.ef.map(it => {
-          const tile = el('div', 'tile');
-          tile.dataset.label = it.label;
-          tile.append(icon(it.label), el('div', 'tile-pct', pct(it.p)), el('div', 'tile-label', it.label));
-          return tile;
+        g._pill.replaceChildren(...m.pillars.map(pl => {
+          const d = el('div', 'pillar');
+          const head = el('div', 'pillar-head');
+          head.append(el('span', 'pillar-name', pl.name), el('span', 'pillar-pct', pct(pl.p)));
+          const opts = el('div', 'pillar-opts');
+          pl.items.forEach(it => {
+            const r = el('div', 'popt');
+            const trk = el('span', 'popt-trk'); const f = el('i'); f.style.setProperty('--w', (it.p * 100).toFixed(1) + '%'); trk.append(f);
+            r.append(el('span', 'popt-lbl', it.label), trk, el('span', 'popt-val', pct(it.p)));
+            opts.append(r);
+          });
+          d.append(head, el('p', 'pillar-desc', pl.desc), opts);
+          return d;
         }));
         g._ver = m.ver;
       }
-      const leaders = lideres(real(m.ef)).map(i => i.label);
-      g._tiles.querySelectorAll('.tile').forEach(tile => {
-        const L = tile.dataset.label;
-        const hot = (s === 0 && leaders.includes(L)) || (s === 1 && /producci[oó]n detenida/i.test(L)) || (s === 2 && PHYSICAL.includes(L));
-        tile.classList.toggle('hot', hot);
-        tile.classList.toggle('dim', s >= 0 && !hot);
-      });
-    },
-  },
-  {
-    base: 'condiciones',
-    title: m => {
-      const L = lideres(real(m.co));
-      return L.length ? pct(L[0].p) + ' pide ' + joinY(L.map(l => lower(l.label))) : 'Condiciones que reducirían el impacto';
-    },
-    intro: m => 'Medidas seleccionadas para reducir el impacto de las interrupciones · hasta tres por empresa.',
-    init(g) {
-      g.append(el('p', 'gfx-title', 'Lo que piden las empresas'));
-      g._list = el('ul', 'checks'); g.append(g._list);
-    },
-    steps: [
-      m => {
-        const L = lideres(real(m.co));
-        if (!L.length) return '';
-        return sujeto(L[0].p, 'señala', 'señalan') + ' ' + joinY(L.map(l => t`${q(lower(l.label))}`)) +
-          (L.length > 1 ? ' como las condiciones que más reducirían el impacto.' : ' como la condición que más reduciría el impacto.');
-      },
-      m => {
-        const r = real(m.co);
-        const nL = lideres(r).length;
-        const next = r.slice(nL, nL + 2);
-        const other = m.co.find(i => i.label === OTHER);
-        if (!next.length && !other) return '';
-        return (next.length ? t`Le siguen ` + joinY(next.map(i => t`${q(lower(i.label))} (<strong>${pct(i.p)}</strong>)`)) + '.' : '') +
-          (other ? t` El ${pct(other.p)} propuso además otras condiciones en respuesta abierta.` : '');
-      },
-    ],
-    draw(g, m, s) {
-      if (g._ver !== m.ver) {
-        g._list.replaceChildren(...m.co.map(it => {
-          const li = el('li', 'check');
-          const sv = svgEl('svg', { viewBox: '0 0 30 30', 'aria-hidden': 'true' });
-          sv.append(svgEl('circle', { cx: 15, cy: 15, r: 13, class: 'ring' }), svgEl('path', { d: 'M9 15.5l4 4 8-9', class: 'tick' }));
-          const body = el('div');
-          const head = el('div', 'bar-head');
-          head.append(el('span', 'bar-label', it.label), el('span', 'bar-val', pct(it.p)));
-          const track = el('div', 'bar-track');
-          const fill = el('div', 'bar-fill'); fill.style.width = (it.p * 100).toFixed(1) + '%';
-          track.append(fill); body.append(head, track);
-          li.append(sv, body);
-          return li;
-        }));
-        g._ver = m.ver;
-      }
-      const nL = lideres(real(m.co)).length;
-      [...g._list.children].forEach((li, k) => {
-        const done = (s === 0 && k < nL) || s >= 1;
-        li.classList.toggle('done', done);
-        li.classList.toggle('dim', s === 0 && k >= nL);
-      });
+      g._pill.classList.toggle('on', s >= 0);
     },
   },
 ];
@@ -999,27 +1334,8 @@ function renderSummary() {
   const sec = $('summary');
   sec.replaceChildren();
   const inner = el('div', 'summary-inner');
-  inner.append(el('h2', null, 'Resumen ejecutivo'));
-  const key = el('div', 'key');
-  const p = el('p', 'synth'); p.innerHTML = sintesis(M); key.append(p); inner.append(key);
-  const cards = el('div', 'kcards');
-  [
-    { v: pct(M.hiCrit), label: 'reporta una afectación alta o crítica', n: M.n.afectacion, id: 'capitulo-0' },
-    { v: dec(M.meanDays), label: 'días con interrupciones de cada 30, en promedio', n: M.n.dias, id: 'capitulo-1' },
-    { v: pct(M.long), label: 'declara interrupciones promedio de 24 horas o más', n: M.n.duracion, id: 'capitulo-2' },
-    { v: pct(M.late), label: 'recibió el horario con menos de 24 horas o sin aviso', n: M.n.aviso, id: 'capitulo-3' },
-    { v: pct(M.full), label: 'puede sostener toda su operación con generación propia', n: M.n.proporcion, id: 'capitulo-4' },
-    { v: pct(M.prod), label: 'detuvo o redujo su producción', n: M.n.efectos, id: 'capitulo-5' },
-  ].filter(c => c.n && c.v !== '—').forEach((item, i) => {
-    const c = el('a', 'kcard' + (i === 0 ? ' hero' : ''));
-    c.href = '#' + item.id;
-    c.append(el('div', 'kcard-num', item.v), el('p', null, item.label), el('span', 'kcard-base', 'Base: ' + item.n + ' respuestas'));
-    cards.append(c);
-  });
-  inner.append(cards);
   const nav = el('nav', 'toc'); nav.setAttribute('aria-label', 'Ir a los resultados');
-  ['Afectación', 'Frecuencia', 'Duración', 'Avisos', 'Generación propia', 'Efectos', 'Prioridades']
-    .forEach((label, i) => { if (!M.n[CHAPTERS[i].base]) return; const link = el('a', '', label); link.href = '#capitulo-' + i; nav.append(link); });
+  CHAPTERS.forEach((ch, i) => { if (!M.n[BASES[i]]) return; const a = el('a', null, String(i + 1).padStart(2, '0') + ' ' + ch.tag); a.href = '#capitulo-' + i; nav.append(a); });
   inner.append(nav);
   sec.append(inner);
 }
@@ -1036,8 +1352,8 @@ function buildStory() {
     const sec = el('section', 'chapter');
     sec.id = 'capitulo-' + ci;
     const head = el('div', 'chapter-head');
-    const h2 = el('h2'), intro = el('p'), base = el('p', 'chapter-base');
-    head.append(h2, intro, base);
+    const num = el('p', 'chapter-num'), h2 = el('h2'), intro = el('p');
+    head.append(num, h2, intro);
     const sc = el('div', 'scrolly');
     const graphic = el('div', 'graphic');
     const g = el('div', 'gfx');
@@ -1046,98 +1362,82 @@ function buildStory() {
     const stepEls = def.steps.map((_, i) => {
       const st = el('div', 'step');
       st.dataset.ch = ci; st.dataset.i = i;
-      const mg = el('div', 'gfx mobile-gfx');
-      def.init(mg);
-      mg.append(el('p', 'graphic-base'));
-      st.append(mg, el('div', 'step-card'));
-      st._mobileGraphic = mg;
+      st.append(el('div', 'step-card'));
       steps.append(st);
       return st;
     });
     sc.append(graphic, steps);
-    sec.append(head, sc);
+    const note = el('p', 'chapter-note');
+    sec.append(head, sc, note);
     story.append(sec);
     def.init(g);
-    g.append(el('p', 'graphic-base'));
-    built.push({ def, sec, g, stepEls, h2, intro, base, cur: -1 });
+    built.push({ def, sec, g, stepEls, num, h2, intro, note, cur: -1 });
   });
 
-  const extra = ['quotes-sec', 'sector-sec'].map(id => { const s = el('section', 'plain'); s.id = id; return s; });
+  const extra = [['sector-sec', 'plain'], ['closing-sec', 'closing']].map(([id, cls]) => { const s = el('section', cls); s.id = id; return s; });
   const about = el('footer', 'about'); about.id = 'about';
   story.append(...extra, about);
 
-  function activateStep(st) {
-    const c = built[+st.dataset.ch], i = +st.dataset.i;
-    if (!c || !M || st.hidden || c.sec.hidden) return;
-    c.cur = i;
-    c.stepEls.forEach((x, k) => x.classList.toggle('active', k === i));
-    c.def.draw(c.g, M, i);
-    // La escena conserva su contenido correcto antes de entrar en la pantalla.
-    // Al entrar por primera vez, revela el estado final con la animación de cada gráfico.
-    if (st.dataset.revealed !== 'true' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      c.def.draw(st._mobileGraphic, M, -1);
-      requestAnimationFrame(() => requestAnimationFrame(() => c.def.draw(st._mobileGraphic, M, i)));
-    } else {
-      c.def.draw(st._mobileGraphic, M, i);
-    }
-    st.dataset.revealed = 'true';
-  }
+  // El paso activo es el que cruza una línea de lectura: el centro de la pantalla en escritorio y el
+  // centro de la zona de texto (bajo el gráfico fijo) en celular. Se calcula con la posición de cada
+  // paso porque, dentro de un iframe de otro dominio, IntersectionObserver ignora rootMargin.
   const mobileQ = window.matchMedia('(max-width: 860px)');
-  // Escritorio: el paso activo es el que cruza el 52 % de la altura de la ventana. Se calcula con la
-  // posición de cada paso porque, dentro de un iframe de otro dominio (GitHub dentro del sitio
-  // institucional), IntersectionObserver ignora rootMargin y activaría el paso equivocado.
   let ticking = false;
   syncSteps = () => {
     ticking = false;
-    if (mobileQ.matches || !M) return;
-    const y = window.innerHeight * 0.52;
+    if (!M) return;
+    const y = window.innerHeight * (mobileQ.matches ? 0.79 : 0.52);
     built.forEach(c => {
       if (c.sec.hidden) return;
       const st = c.stepEls.find(x => { if (x.hidden) return false; const r = x.getBoundingClientRect(); return r.top <= y && r.bottom > y; });
-      if (st && c.cur !== +st.dataset.i) activateStep(st);
+      if (!st) return;
+      const i = +st.dataset.i;
+      if (c.cur === i) return;
+      c.cur = i;
+      c.stepEls.forEach((x, k) => x.classList.toggle('active', k === i));
+      c.def.draw(c.g, M, i);
     });
   };
   window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(syncSteps); } }, { passive: true });
   window.addEventListener('resize', () => syncSteps());
-  // Móvil: cada escena tiene su propio gráfico y se revela al aparecer en pantalla.
-  if ('IntersectionObserver' in window) {
-    observer = new IntersectionObserver(entries => {
-      if (!mobileQ.matches) return;
-      entries.filter(e => e.isIntersecting).forEach(e => activateStep(e.target));
-    }, { threshold: 0.14 });
-    built.forEach(c => c.stepEls.forEach(st => observer.observe(st)));
-  } else {
-    built.forEach(c => c.stepEls.forEach(st => activateStep(st)));
-  }
-
 }
 
 function refresh() {
   if (!built.length) buildStory();
-  built.forEach(c => {
-    const n = M.n[c.def.base] || 0;
-    c.sec.hidden = !n;
-    if (!n) return;
+  built.forEach((c, ci) => {
+    c.sec.hidden = !M.n[BASES[ci]];
+    if (c.sec.hidden) return;
+    c.num.textContent = String(ci + 1).padStart(2, '0') + ' / ' + String(CHAPTERS.length).padStart(2, '0') + ' · ' + c.def.tag;
     c.h2.textContent = c.def.title(M);
     c.intro.textContent = c.def.intro(M);
-    c.base.textContent = 'Base: ' + n + ' respuestas válidas a esta pregunta.';
-    c.g.querySelector('.graphic-base').textContent = 'Base: ' + n + ' respuestas';
+    c.note.textContent = c.def.note ? c.def.note(M) : '';
     c.stepEls.forEach((st, i) => {
+      const sd = c.def.steps[i];
       let html = '';
-      try { html = c.def.steps[i](M); } catch (e) { console.error('Escena:', c.def.base, e); }
+      try {
+        const body = sd.b ? sd.b(M) : '';
+        const head = typeof sd.h === 'function' ? sd.h(M) : sd.h;
+        if (body || (sd.headOnly && head)) html = '<p class="k">' + esc(sd.k) + '</p>' + (head ? '<p class="h">' + esc(head) + '</p>' : '') + (body ? '<p class="b">' + body + '</p>' : '');
+      } catch (e) { html = ''; }
       st.querySelector('.step-card').innerHTML = html;
       st.hidden = !html;
-      st._mobileGraphic.querySelector('.graphic-base').textContent = 'Base: ' + n + ' respuestas';
-      // Las escenas aún no vistas quedan en su estado inicial para animarse al entrar.
-      c.def.draw(st._mobileGraphic, M, st.dataset.revealed === 'true' || !('IntersectionObserver' in window) ? i : -1);
     });
-    c.def.draw(c.g, M, c.cur < 0 ? 0 : c.cur);
+    c.def.draw(c.g, M, c.cur);
   });
-  $('title').textContent = titular(M);
-  $('foot-text').textContent = (CFG.institution || 'CIP') + ' · Resultados agregados' + (lastResponse() ? ' · Datos al ' + lastResponse().toLocaleDateString(LOCALE, { dateStyle: 'long' }) : '');
+  $('title').textContent = tesis(M);
+  $('cover-sub').textContent = bajada(M);
+  const cs = $('cover-stats');
+  cs.replaceChildren();
+  const c0 = real(M.co)[0];
+  [[M.noFullCut, 'no puede sostener toda su operación durante su corte promedio'],
+   [M.fuel, 'reporta mayor gasto en combustible'],
+   [c0 ? c0.p : NaN, c0 ? 'prioriza ' + lower(c0.label) : '']].filter(([v]) => Number.isFinite(v) && v > 0).forEach(([v, txt]) => {
+    const d = el('div', 'cstat'); d.append(el('div', 'cstat-num', pct(v)), el('div', 'cstat-txt', txt)); cs.append(d);
+  });
+  $('foot-text').textContent = (CFG.institution || 'CIP') + ' · Resultados agregados y anónimos' + (lastResponse() ? ' · Datos al ' + lastResponse().toLocaleDateString(LOCALE, { dateStyle: 'long' }) : '');
   renderSummary();
-  renderQuotes();
   renderSectors();
+  renderClosing();
   renderAbout();
   syncSteps();
 }
@@ -1146,7 +1446,7 @@ function refresh() {
 /* Cada respuesta puede tocar varios temas. Para ajustar la clasificación, edita las expresiones. */
 const THEMES = [
   { name: 'Planificación y aviso anticipado', re: /cronograma|programaci|planific|anticipa|aviso|notifica|certeza|organizaci|con tiempo|calendario/ },
-  { name: 'Duración y frecuencia de las interrupciones', re: /consecutiv|seguidos|bloques|horarios? cortos|maximo \d+ horas|exceder|horas de corte|todos los dias|7 dias|flexibilidad|procesos productivos|horarios de produccion|diferenciad/ },
+  { name: 'Duración y frecuencia de los cortes', re: /consecutiv|seguidos|bloques|horarios? cortos|maximo \d+ horas|exceder|horas de corte|todos los dias|7 dias|flexibilidad|procesos productivos|horarios de produccion|diferenciad/ },
   { name: 'Reconocer la autogeneración', re: /reconoc|autogeneraci|generacion propia|generadores|\bgee\b|compensaci/ },
   { name: 'Costo y abastecimiento de combustible', re: /combustible|diesel/ },
   { name: 'Menos trámites para generar energía', re: /tramite|permiso|habilitar|generacion privada|otros actores|agiliz|agilidad|burocra/ },
@@ -1155,14 +1455,13 @@ const THEMES = [
   { name: 'Empleo y competitividad', re: /personal|empleo|despid|importaci|contrabando|competitiv/ },
 ];
 const TRIVIAL = /^(n\/?a|ning[uú]n[oa]?|no|ninguna|ninguno|sin comentarios?|-+|\.+)$/i;
+
 function redactIdentifiers(s) {
   return String(s).replace(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g, '[correo omitido]')
     .replace(/https?:\/\/\S+/gi, '[enlace omitido]')
     .replace(/\b(?:\+?593[ -]?)?0?9\d{8}\b/g, '[teléfono omitido]')
     .replace(/\b\d{13}\b/g, '[identificador omitido]');
 }
-
-
 function clauses(text) {
   return tidy(text).replace(/([.;!?])\s+/g, '$1\n').replace(/,\s+(?=[A-ZÁÉÍÓÚÑ])/g, '\n').split('\n')
     .map(c => c.trim().replace(/[,;:]+$/, '')).filter(c => c.length >= 12);
@@ -1206,7 +1505,7 @@ function renderQuotes() {
     lead = 'Entre las empresas que dejaron propuestas o comentarios, ' + (L.length > 1 ? 'los temas más recurrentes son ' : 'el tema más recurrente es ') +
       joinY(L.map(t => lower(t.name) + ' (' + pct(t.p) + ')')) + '.';
   }
-  sec.append(el('h2', null, 'Propuestas abiertas de las empresas'), el('p', 'lead', lead));
+  sec.append(el('h2', null, 'Lo que plantean las empresas'), el('p', 'lead', lead));
 
   const grid = el('div', 'themes');
   V.themes.forEach((th, k) => {
@@ -1216,12 +1515,12 @@ function renderQuotes() {
     const track = el('div', 'bar-track'); const fill = el('div', 'bar-fill'); fill.style.width = (th.p * 100).toFixed(1) + '%'; track.append(fill);
     card.append(head, track);
     const ul = el('ul', 'excerpts');
-    if (CFG.publishOpenExcerpts === true) th.quotes.forEach(q => ul.append(el('li', null, redactIdentifiers(q))));
+    if (CFG.publishOpenExcerpts !== false) th.quotes.forEach(q => ul.append(el('li', null, redactIdentifiers(q))));
     card.append(ul);
     grid.append(card);
   });
   sec.append(grid);
-  sec.append(el('p', 'gfx-note', (CFG.showBases ? 'Base: ' + V.base + ' empresas con texto abierto. ' : 'Porcentaje sobre las empresas que dejaron alguna respuesta abierta. ') + 'Agrupación automática por palabras clave, sin revisión semántica: una respuesta puede abordar varios temas.' + (CFG.publishOpenExcerpts ? ' Los extractos se recortan y omiten datos de contacto.' : '')));
+  sec.append(el('p', 'gfx-note', 'Porcentaje sobre las empresas que dejaron alguna respuesta abierta. Clasificación automática por palabras clave: una respuesta puede tocar varios temas. ' + (CFG.publishOpenExcerpts !== false ? 'Los extractos se recortan y omiten datos de contacto.' : '')));
   if (CFG.showRawResponses !== true) return;
 
   /* Texto completo, plegado */
@@ -1238,13 +1537,50 @@ function renderQuotes() {
     grp.append(qs);
     box.append(grp);
   });
-  const btn = el('button', 'more', 'Ver respuestas abiertas (revisadas)');
+  const btn = el('button', 'more', 'Ver todas las respuestas sin editar');
   btn.type = 'button';
   btn.addEventListener('click', () => {
     box.hidden = !box.hidden;
-    btn.textContent = box.hidden ? 'Ver respuestas abiertas (revisadas)' : 'Ocultar respuestas abiertas';
+    btn.textContent = box.hidden ? 'Ver todas las respuestas sin editar' : 'Ocultar respuestas completas';
   });
   sec.append(btn, box);
+}
+
+function renderClosing() {
+  const sec = $('closing-sec');
+  sec.replaceChildren();
+  if (ASSETS.ring) { const r = el('img', 'ring'); r.src = ASSETS.ring; r.alt = ''; sec.append(r); }
+  const inner = el('div', 'closing-in');
+  inner.append(el('p', 'k', 'Cierre'), el('blockquote', null, 'La industria pide que su contribución sea técnicamente viable y no comprometa innecesariamente la producción y el empleo.'));
+  sec.append(inner);
+}
+
+function renderPolicy() {
+  const sec = $('policy-sec');
+  sec.replaceChildren();
+  if (CFG.showPolicy === false) return;
+  sec.append(el('p', 'chapter-num', 'Lectura institucional'), el('h2', null, 'Una respuesta técnicamente mejor'),
+    el('p', 'lead', 'Gestionar la escasez requiere algo más que desconectar. Es posible evaluar esquemas que preserven los objetivos eléctricos y reduzcan los daños productivos evitables.'));
+  const grid = el('div', 'policy');
+  const scheme = (title, sub, pos, text, head) => {
+    const card = el('div', 'pcard');
+    card.append(el('p', 'k', head), el('h3', null, title));
+    const sch = el('div', 'scheme');
+    ['Planta A', 'Planta B', 'Planta C', 'Planta D'].forEach((pl, k) => {
+      const row = el('div', 'srow');
+      const trk = el('div', 'strk'); const blk = el('i'); blk.style.left = pos[k][0] + '%'; blk.style.width = pos[k][1] + '%'; trk.append(blk);
+      row.append(el('span', null, pl), trk);
+      sch.append(row);
+    });
+    card.append(sch, el('p', 'scap', sub), el('p', null, text));
+    return card;
+  };
+  grid.append(
+    scheme('El mismo cronograma genera costos diferentes', 'Desconexión uniforme: mismas ventanas, impactos distintos.', [[30, 30], [30, 30], [30, 30], [30, 30]],
+      'La uniformidad administrativa no garantiza eficiencia económica: una restricción común puede exigir ajustes radicalmente distintos según el proceso industrial.', 'El problema del instrumento'),
+    scheme('Medir la contribución y reconocer el esfuerzo', 'Gestión diferenciada: metas verificables y restricciones operativas.', [[4, 22], [62, 18], [34, 26], [76, 16]],
+      'Evaluar la reducción verificable del consumo, el reconocimiento de la generación propia y la flexibilidad de programación, siempre sujetos a límites horarios de potencia, energía y seguridad de red.', 'La alternativa a evaluar'));
+  sec.append(grid, el('p', 'gfx-note', 'Propuesta derivada del diagnóstico; los esquemas son conceptuales y su factibilidad requiere validación técnica y regulatoria.'));
 }
 
 function renderSectors() {
@@ -1262,7 +1598,7 @@ function renderSectors() {
   groups.forEach((v, s) => (v.length >= MIN_GROUP ? shown.push([s, v]) : rest.push(...v)));
   if (!shown.length) return;
   if (rest.length >= MIN_GROUP) shown.push(['Otros sectores', rest]);
-  const rows = shown.map(([s, v]) => { const items = ordinal(v, ORD.afectacion, severityLabel); return { s, items, n: v.length, hi: share(items, ['Alto', 'Crítico']) }; })
+  const rows = shown.map(([s, v]) => { const items = ordinal(v, ORD.afectacion, severityLabel); return { s, items, hi: share(items, ['Alto', 'Crítico']) }; })
     .sort((a, b) => (a.s === 'Otros sectores') - (b.s === 'Otros sectores') || b.hi - a.hi);
 
   sec.append(el('h2', null, 'Por sector'),
@@ -1270,7 +1606,7 @@ function renderSectors() {
   const panel = el('div', 'panel');
   rows.forEach(r => {
     const row = el('div', 'sector-row');
-    row.append(el('span', 'bar-label', r.s + (CFG.showBases ? ' (n=' + r.n + ')' : '')), stack(r.items), el('span', 'bar-val', pct(r.hi)));
+    row.append(el('span', 'bar-label', r.s), stack(r.items), el('span', 'bar-val', pct(r.hi)));
     panel.append(row);
   });
   panel.append(legend(ORD.afectacion.map(([label, tone]) => ({ label, tone })), false));
@@ -1281,15 +1617,10 @@ function renderAbout() {
   const a = $('about');
   a.replaceChildren();
   const sectors = nominal(values('sector')).map(i => i.label).sort((x, y) => x.localeCompare(y, 'es'));
-  const volt = nominal(values('voltaje')).map(i => i.label);
-  const last = tsIdx >= 0 ? data.rows.map(r => r[tsIdx]).filter(notEmpty).map(s => new Date(s)).sort((x, y) => y - x)[0] : null;
-  a.append(el('p', null, 'Resultados preliminares de la encuesta de la ' + (CFG.institution || 'CIP') +
-    ' sobre la situación eléctrica. Los porcentajes se calculan sobre las empresas que respondieron cada pregunta y cambiarán a medida que lleguen nuevas respuestas.'));
-  a.append(el('p', null, 'Los resultados describen a las empresas participantes; una muestra voluntaria no permite extrapolarlos automáticamente al conjunto del sector productivo.'));
-  a.append(el('p', null, 'Si una empresa respondió más de una vez, se considera su respuesta más reciente; la consolidación se hace en la fuente de datos antes de publicar, y los nombres de empresa no salen de la hoja de respuestas. Las respuestas abiertas se presentan agrupadas por tema y sin atribución.'));
-  if (sectors.length) a.append(el('p', null, 'Sectores declarados en la muestra: ' + sectors.length + '.'));
-  if (volt.length) a.append(el('p', null, 'Categorías de voltaje declaradas: ' + volt.join('; ') + '.'));
-  if (last) a.append(el('p', null, ('Última respuesta incorporada: ' + last.toLocaleString(LOCALE, { dateStyle: 'long', timeStyle: 'short' }) + '.').replace(/\.\.$/, '.')));
+  a.append(el('p', 'about-title', 'Resultados preliminares'));
+  a.append(el('p', null, 'Datos cambian con las nuevas respuestas.'));
+  a.append(el('p', null, 'Si una empresa respondió más de una vez se considera su respuesta más reciente.'));
+  if (sectors.length) a.append(el('p', null, 'Sectores representados: ' + sectors.join('; ') + '.'));
 }
 
 /* ---------- Datos en vivo ---------- */
@@ -1310,11 +1641,10 @@ function onError(err) { failing = true; errText = (err && err.message) || String
 function onPayload(payload) {
       lastOk = Date.now(); failing = false; errText = '';
       tickStatus();
-      const serialized = typeof payload === 'string' ? payload : JSON.stringify(payload);
-      if (serialized === lastPayload) return;
-      const parsed = typeof payload === 'string' ? JSON.parse(payload) : payload;
-      if (!parsed || !Array.isArray(parsed.headers) || !Array.isArray(parsed.rows)) throw new Error('Formato de datos inválido');
-      lastPayload = serialized;
+      if (payload === lastPayload) return;
+      const parsed = JSON.parse(payload);
+      if (!parsed || !Array.isArray(parsed.headers) || !Array.isArray(parsed.rows)) { onError(new Error('Formato de datos inválido')); return; }
+      lastPayload = payload;
       data = parsed;
       idx = {};
       Object.keys(Q).forEach(k => { idx[k] = data.headers.findIndex(h => Q[k].test(h)); });
@@ -1329,7 +1659,7 @@ function onPayload(payload) {
 function tickStatus() {
   const s = $('live');
   if (failing) { s.className = 'live err'; s.textContent = 'Sin conexión con la hoja; reintentando'; s.title = errText; }
-  else if (lastOk) { s.className = 'live ok'; s.textContent = 'Conexión verificada ' + ago(new Date(lastOk)); s.title = 'Última sincronización exitosa, no necesariamente una respuesta nueva'; }
+  else if (lastOk) { s.className = 'live ok'; s.textContent = 'En vivo, actualizado ' + ago(new Date(lastOk)); s.title = ''; }
 }
 function startPolling() { stopPolling(); load(); pollTimer = setInterval(load, (CFG.refreshSeconds || 30) * 1000); }
 function stopPolling() { clearInterval(pollTimer); pollTimer = null; }
@@ -1367,7 +1697,7 @@ function drawPowerline() {
 
 /* ---------- Inicio ---------- */
 $('title').textContent = CFG.title || '';
-$('cover-sub').textContent = 'Resultados preliminares de la encuesta a empresas participantes · últimos 30 días.';
+$('cover-sub').textContent = (CFG.title ? CFG.title + ': r' : 'R') + 'esultados de la encuesta institucional aplicada a empresas del sector productivo.';
 const ASSETS = window.CIP_ASSETS || {};
 if (ASSETS.logo || CFG.logoUrl) { const l = $('logo'); l.src = CFG.logoUrl || ASSETS.logo; l.alt = CFG.institution || ''; l.hidden = false; }
 else $('institution').textContent = CFG.institution || '';
@@ -1376,7 +1706,6 @@ if (ASSETS.logoBlue) { $('logo-blue').src = ASSETS.logoBlue; $('logo-blue').alt 
 if (ASSETS.logo) { $('logo-white').src = ASSETS.logo; $('logo-white').alt = CFG.institution || ''; }
 if (ASSETS.dirTecnica) { $('logo-dt').src = ASSETS.dirTecnica; $('logo-dt').hidden = false; }
 $('unit').textContent = CFG.unit || 'Dirección Técnica';
-if (CFG.showBases) document.body.classList.add('show-bases');
 $('subtitle').textContent = CFG.subtitle || '';
 document.title = CFG.title || 'Encuesta';
 drawPowerline();
@@ -1387,7 +1716,7 @@ window.addEventListener('scroll', () => {
   $('progress').style.width = (p * 100).toFixed(1) + '%';
 }, { passive: true });
 document.addEventListener('visibilitychange', () => (document.hidden ? stopPolling() : startPolling()));
-setInterval(tickStatus, 60000);
+setInterval(tickStatus, 1000);
 startPolling();
 </script>
 </body>
